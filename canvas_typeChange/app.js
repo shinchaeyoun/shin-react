@@ -13,27 +13,31 @@ function canvasTypeFn ($type){
       canvas.on('mouseout', drawPc);
     }; break;
     case 'lineDraw': {
-            console.log('switch lineDraw');
-            canvas.on('mousedown', drawingPc);
-            canvas.on('mousemove', drawingPc);
-            canvas.on('mouseup', drawingPc);
-            canvas.on('mouseup',drawingPc);
-          }; break;
-          case 'moDraw': {
-            // 타블릿은 모바일으로 인식함 
-            console.log('switch moDraw');
-            canvas.on('touchstart', drawMo);
-            canvas.on('touchend', drawMo);
-            canvas.on('touchcancle', drawMo);
-            canvas.on('touchmove', drawMo);
-          }; break;
-          case 'dragLineDraw': {
-            console.log('draaaaaaaa');
-            $('.dot_container').show();
-            dragdropable();
-          }; break;
-        };
-      };
+      console.log('switch lineDraw');
+      canvas.on('mousedown', drawingPc);
+      canvas.on('mousemove', drawingPc);
+      canvas.on('mouseup', drawingPc);
+      canvas.on('mouseup',drawingPc);
+    }; break;
+    case 'moDraw': {
+      // 타블릿은 모바일으로 인식함 
+      console.log('switch moDraw');
+      canvas.on('touchstart', drawMo);
+      canvas.on('touchend', drawMo);
+      canvas.on('touchcancle', drawMo);
+      canvas.on('touchmove', drawMo);
+    }; break;
+    case 'dragLineDraw': {
+      console.log('draaaaaaaa');
+      $('.dot_container').show();
+      dragdropable();
+    }; break;
+    case 'coloring': {
+      console.log('coloring');
+      coloring();
+    }; break;
+  };
+};
       
       // 선긋기, 드래그 드랍
       function dragdropable() {
@@ -85,71 +89,90 @@ function canvasTypeFn ($type){
             draw();
           },
     });
-    dropObj.droppable({
-      drop: function (e, ui) {
-        let drag = ui.draggable;
-        
-        dropX = $(this).find('.dropObj').offset().left;
-        dropY = $(this).find('.dropObj').offset().top;
-        
-        drag.offset({
-          top: dropY,
-          left: dropX
-        });
-        
-        for (let i = 0; i < otherObj.length; i++) {
-          if (drag.hitTestObject(otherObj.eq(i))) {
-            hittest(drag);
-          } else {
-            drag.draggable({
-              revert: function (e, ui) {
-                if (e == false) {
-                  hittest($(this));
-                } else {
-                  isRevert = true;
-                };
-              },
-                    });
-                  };
-                };
-              },
-            });
-          };
+      dropObj.droppable({
+        drop: function (e, ui) {
+          let drag = ui.draggable;
           
-          function draw() {
-            ctx.clearRect(0, 0, canvas.width(), canvas.height());
-            
-            for (let i = 0; i < dragObj.length; i++) {
-              endX = (dragObj.eq(i).offset().left + objRadius) - canvas.offset().left;
-              endY = (dragObj.eq(i).offset().top + objRadius) - canvas.offset().top;
-              
-              if (lineArr[i] == 'start') {
-                ctx.beginPath();
-                ctx.moveTo(startX[i], startY[i]);
-                ctx.lineTo(endX, endY);
-                ctx.stroke();
-                ctx.lineCap = 'round';
-                ctx.lineJoin = 'round';
-              };
-            };
-          };
-function hittest($obj) {
-    isRevert = false;
-    $obj.addClass('return');
-    $obj.draggable({
-      revert: true,
-      revertDuration: 10
-    });
+          dropX = $(this).find('.dropObj').offset().left;
+          dropY = $(this).find('.dropObj').offset().top;
+          
+          drag.offset({
+            top: dropY,
+            left: dropX
+          });
+          
+          for (let i = 0; i < otherObj.length; i++) {
+            if (drag.hitTestObject(otherObj.eq(i))) {
+              hittest(drag);
+            } else {
+              drag.draggable({
+                revert: function (e, ui) {
+                  if (e == false) {
+                    hittest($(this));
+                  } else {
+                    isRevert = true;
+                  };
+                },
+                      });
+                    };
+                  };
+                },
+        });
+      };
+          
+function draw() {
+  ctx.clearRect(0, 0, canvas.width(), canvas.height());
+  
+  for (let i = 0; i < dragObj.length; i++) {
+    endX = (dragObj.eq(i).offset().left + objRadius) - canvas.offset().left;
+    endY = (dragObj.eq(i).offset().top + objRadius) - canvas.offset().top;
+    
+    if (lineArr[i] == 'start') {
+      ctx.beginPath();
+      ctx.moveTo(startX[i], startY[i]);
+      ctx.lineTo(endX, endY);
+      ctx.stroke();
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+    };
   };
+};
+
+function hittest($obj) {
+  isRevert = false;
+  $obj.addClass('return');
+  $obj.draggable({
+    revert: true,
+    revertDuration: 10
+  });
+};
   // 선긋기 END
   
   
-  
-  
-  
-  
-  
-  
+  function coloring () {
+    console.log('hi coloring');
+
+    const imgArr = [
+      './img/drawing_line/line_image_1.png',
+      './img/drawing_line/line_image_2.png',
+      './img/drawing_line/line_image_3.png',
+      './img/drawing_line/line_image_4.png',
+      './img/drawing_line/line_image_5.png',
+      './img/drawing_line/line_image_6.png',
+      './img/drawing_line/line_image_7.png',
+      './img/drawing_line/line_image_8.png',
+      './img/drawing_line/line_image_9.png',
+      './img/drawing_line/line_image_10.png',
+    ];
+
+    const imgNum = Math.round(Math.random()*imgArr.length);
+    let addImg = new Image();
+    addImg.src = imgArr[imgNum];
+
+    div.append(addImg);
+  };
+
+
   
   
   
@@ -192,45 +215,43 @@ function hittest($obj) {
             drawble = true;
 
             // 8은 margin 값
-            winTop = canvas.offset().top + window.scrollY - 8;
+            let scrollTop = canvas.offset().top + window.scrollY - 8;
             sx = e.clientX - canvas.offset().left;
-            sy = e.clientY - canvas.offset().top + winTop;
+            sy = e.clientY - canvas.offset().top + scrollTop;
           };
           break;
           
           case "mouseover":
-      case "mousemove": {
-        if (drawble) {
-          ctx.putImageData(backup, 0, 0);
-          ctx.beginPath();
-          ctx.moveTo(sx, sy);
-          ctx.lineTo(getPosition(e).X, getPosition(e).Y);
-          ctx.stroke();
-          ctx.lineCap = 'round';
-          ctx.lineJoin = 'round';
-        };
-        
-        $('.x').text('x: ' + e.clientX);
-        $('.y').text('y: ' + e.clientY);
-      };
-      break;
+          case "mousemove": {
+            if (drawble) {
+              ctx.putImageData(backup, 0, 0);
+              ctx.beginPath();
+              ctx.moveTo(sx, sy);
+              ctx.lineTo(getPosition(e).X, getPosition(e).Y);
+              ctx.stroke();
+              ctx.lineCap = 'round';
+              ctx.lineJoin = 'round';
+            };
+          };
+          break;
       
-      case "mouseup":
-        case "mouseout": {
-          drawble = false;
-        };
-        break;
-        case "mouseover": {
-          drawble = true;
-        };
-        break;
+          case "mouseup":
+            case "mouseout": {
+              drawble = false;
+            };
+            break;
+            case "mouseover": {
+              drawble = true;
+            };
+            break;
+          };
       };
-    };
     
     // mobile draw 이벤트 함수
     function drawMo(e) {
       switch (e.type) {
         case "touchstart": {
+          console.log('t s ',canvas.offset().top + window.scrollY + 8);
           // BodyScrollDisAble();
           drawble = true;
           ctx.beginPath();
