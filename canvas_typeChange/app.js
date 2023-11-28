@@ -6,11 +6,14 @@ function init() {
 function canvasTypeFn ($type){
   switch($type){
     case 'draw': {
-      console.log('switch draw');
       canvas.on('mousedown', drawPc);
       canvas.on('mousemove', drawPc);
       canvas.on('mouseup', drawPc);
       canvas.on('mouseout', drawPc);
+      canvas.on('touchstart', drawMo);
+      canvas.on('touchend', drawMo);
+      canvas.on('touchcancle', drawMo);
+      canvas.on('touchmove', drawMo);
     }; break;
     case 'lineDraw': {
       console.log('switch lineDraw');
@@ -22,19 +25,27 @@ function canvasTypeFn ($type){
     case 'moDraw': {
       // 타블릿은 모바일으로 인식함 
       console.log('switch moDraw');
+      canvas.on('mousedown', drawPc);
+      canvas.on('mousemove', drawPc);
+      canvas.on('mouseup', drawPc);
+      canvas.on('mouseout', drawPc);
       canvas.on('touchstart', drawMo);
       canvas.on('touchend', drawMo);
       canvas.on('touchcancle', drawMo);
       canvas.on('touchmove', drawMo);
     }; break;
     case 'dragLineDraw': {
-      console.log('draaaaaaaa');
+      console.log('dragLineDraw');
       $('.dot_container').show();
       dragdropable();
     }; break;
     case 'coloring': {
       console.log('coloring');
       coloring();
+      canvas.on('mousedown', drawPc);
+      canvas.on('mousemove', drawPc);
+      canvas.on('mouseup', drawPc);
+      canvas.on('mouseout', drawPc);
     }; break;
   };
 };
@@ -169,7 +180,12 @@ function hittest($obj) {
     let addImg = new Image();
     addImg.src = imgArr[imgNum];
 
-    div.append(addImg);
+    addImg.onload = function (){
+
+      ctx.drawImage(addImg,10,10,750, 750);
+    };
+    // div.prepend(addImg);
+
   };
 
 
