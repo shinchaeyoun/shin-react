@@ -47,7 +47,11 @@ let loadCheck = 0,
     otherObj;
 
 nowUrl = location.href;
-urlNum = Number(nowUrl.split('/')[5].split('.')[0].split('canvas')[1]);
+// urlNum = Number(nowUrl.split('/')[5].split('.')[0].split('canvas')[1]);
+// urlNum = Number(nowUrl.slice(-1));
+urlNum = Number(nowUrl.slice(-6,-5));
+
+console.log(typeof(urlNum),'urlNum',);
 
 function complete() {
     ++loadCheck;
@@ -97,8 +101,6 @@ function page() {
     canvasTypeFn(nowType);
 };
 
-
-
 function pageControls() {
     pagePrev.on('click', function () {
         urlNum--;
@@ -106,24 +108,23 @@ function pageControls() {
             urlNum = 1;
             alert('First page');
         };
-        pageNum = itostr(urlNum)
-        pageMove(pageNum)
+        pageMove(urlNum)
     });
 
     pageNext.on('click', function () {
         urlNum++;
+        console.log(urlNum);
         if (urlNum > totalPage) {
             urlNum = totalPage;
             alert('Last page');
         };
-        pageNum = itostr(urlNum)
-        pageMove(pageNum);
+        pageMove(urlNum);
     });
 };
 
 function pageMove($pageNum) {
-    changeUrl = nowUrl.replace(nowUrl.split('/')[5].split('.')[0].split('canvas')[1], $pageNum);
-    location.href = changeUrl;
+    changeUrl = nowUrl.replace(nowUrl.slice(-6),$pageNum);
+    location.href = changeUrl+'.html';
 };
 
 function itostr($num) {
