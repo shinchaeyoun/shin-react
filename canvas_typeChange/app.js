@@ -161,8 +161,6 @@ function hittest($obj) {
   
   
   function coloring () {
-    console.log('hi coloring');
-
     const imgArr = [
       './img/drawing_line/line_image_1.png',
       './img/drawing_line/line_image_2.png',
@@ -181,16 +179,13 @@ function hittest($obj) {
     addImg.src = imgArr[imgNum];
 
     addImg.onload = function (){
-
-      ctx.drawImage(addImg,10,10,750, 750);
+      ctx.drawImage(addImg, 10, 10);
     };
-    // div.prepend(addImg);
 
+    // or 캔버스 태그 안에 이미지 태그를 append
+    // canvas.append() 
   };
 
-
-  
-  
   
   // pc draw 이벤트 함수
   function drawPc(e) {

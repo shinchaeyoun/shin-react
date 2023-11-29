@@ -178,8 +178,15 @@ input[type="color" i] {
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     object-fit: contain;
-    /* z-index: -1; */
+     z-index: -1; 
 } */
+
+.canvas_container canvas {
+    background-size: contain;
+    background-position: center;
+
+    object-fit: contain;
+}
 
 
 .page_controls {
