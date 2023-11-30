@@ -200,7 +200,7 @@ function coloring () {
     height = maxHeigth;
     x = x-width/2;
 
-    // ctx.drawImage(bgImage, x, 0, width, maxHeigth);
+    ctx.drawImage(bgImage, x, 0, width, maxHeigth);
   };
 };
   
