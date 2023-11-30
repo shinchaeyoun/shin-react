@@ -16,6 +16,7 @@ let loadCheck = 0,
     canvas,
     div,
     ctx,
+    rect,
     dragObj,
     dropObj,
     drawble = false,
@@ -68,6 +69,7 @@ function complete() {
         canvas = $("#canvas");
         div = $(".canvas_container");
         ctx = canvas[0].getContext("2d");
+        rect = canvas[0].getBoundingClientRect();
         dragBox = $('.start .dot');
         dragObj = $('.start .dragObj');
         dropObj = $('.end .dot');
