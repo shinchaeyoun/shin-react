@@ -496,6 +496,7 @@ function buttonEvent() {
   $save.on('click', function () {
     localStorage.setItem('saveCanvas', canvas[0].toDataURL());
   });
+  $getBack.on('click', saveImg)
   $url.on('click', function () {
     console.log(canvas[0].toDataURL());
     $url.append('<textarea class="hide">' + canvas[0].toDataURL() + '</textarea>');

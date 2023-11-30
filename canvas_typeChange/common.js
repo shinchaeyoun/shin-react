@@ -72,6 +72,7 @@ function complete() {
         dragObj = $('.start .dragObj');
         dropObj = $('.end .dot');
         $save = $('.save_container');
+        $getBack = $('.getBack_container');
         $url = $('.url_container');
         $picture = $('.picture_container');
         $delete = $('.delete_container');
