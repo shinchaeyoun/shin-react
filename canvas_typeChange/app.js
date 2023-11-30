@@ -282,21 +282,28 @@ function drawPc(e) {
 function drawMo(e) {
   switch (e.type) {
     case "touchstart": {
-      console.log('t s ',canvas.offset().top + window.scrollY + 8);
-      // BodyScrollDisAble();
-      drawble = true;
-      ctx.beginPath();
-      ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
-      // ctx.stroke();
+      if(mode === 'brush') {
+        console.log('t s ',canvas.offset().top + window.scrollY + 8);
+        drawble = true;
+        ctx.beginPath();
+        ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+        ctx.stroke();
+      } else {
+        ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth,ctx.lineWidth);
+      };
     } break;
     case "touchmove": {
       if (drawble) {
         e.preventDefault();
         
-        ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
-        ctx.stroke();
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
+        if(mode === 'brush') {
+          ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+          ctx.stroke();
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+        } else {
+          ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth,ctx.lineWidth);
+        };
       }
     } break;
     case "touchend":
@@ -386,11 +393,6 @@ function rgb2hex($val) {
   };
 };
 
-function clearBrush () {
-
-};
-
-
 function reset() {
   canvasResize();
   
@@ -467,7 +469,6 @@ function buttonEvent() {
     reset();
   });
 }; // button click event end
-
 
 // hit test fn
 $.fn.hitTestObject = function (obj) {
