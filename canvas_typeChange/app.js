@@ -6,7 +6,6 @@ function init() {
   lineChange();
 };
 function canvasTypeFn ($type){
-
   switch($type){
     case 'draw': {
       canvas.on('mousedown', drawPc);
@@ -157,20 +156,34 @@ function hittest($obj) {
 // 선긋기 END
 
 const imgArr = [
-  './img/drawing_line/line_image_1.png',
-  './img/drawing_line/line_image_2.png',
-  './img/drawing_line/line_image_3.png',
-  './img/drawing_line/line_image_4.png',
-  './img/drawing_line/line_image_5.png',
-  './img/drawing_line/line_image_6.png',
-  './img/drawing_line/line_image_7.png',
-  './img/drawing_line/line_image_8.png',
-  './img/drawing_line/line_image_9.png',
-  './img/drawing_line/line_image_10.png',
+  './img/drawing_line/line_1.png',
+  './img/drawing_line/line_2.png',
+  './img/drawing_line/line_3.png',
 ];
+// const imgArr = [
+//   './img/drawing_line/line_image_1.png',
+//   './img/drawing_line/line_image_2.png',
+//   './img/drawing_line/line_image_3.png',
+//   './img/drawing_line/line_image_4.png',
+//   './img/drawing_line/line_image_5.png',
+//   './img/drawing_line/line_image_6.png',
+//   './img/drawing_line/line_image_7.png',
+//   './img/drawing_line/line_image_8.png',
+//   './img/drawing_line/line_image_9.png',
+//   './img/drawing_line/line_image_10.png',
+// ];
 let imgNum = Math.round(Math.random()*imgArr.length);
 
 function coloring () {
+  div.prepend('<div id="canvas2"></div>');
+  canvas2 = $('#canvas2');
+  canvas2.css({
+    position: 'absolute', top: 0, left:0
+  });
+  canvas2.width = div.width();
+  canvas2.height = div.height();
+  // ctx2 = canvas2[0].getContext("2d");
+
   let bgImage = new Image();
   bgImage.src = imgArr[imgNum];
 
@@ -187,7 +200,7 @@ function coloring () {
     height = maxHeigth;
     x = x-width/2;
 
-    ctx.drawImage(bgImage, x, 0, width, maxHeigth);
+    // ctx.drawImage(bgImage, x, 0, width, maxHeigth);
   };
 };
   
@@ -196,112 +209,112 @@ function drawPc(e) {
   switch (e.type) {
     case "mousedown": {
       drawble = true;
-      ctx.beginPath();
-      ctx.moveTo(getPosition(e).X, getPosition(e).Y);
-      ctx.lineTo(getPosition(e).X, getPosition(e).Y);
-      ctx.stroke();
-    }
-    break;
-    
-      case "mousemove": {
-        if (drawble) {
+      if(mode === 'brush') {
+        ctx.beginPath();
+        ctx.moveTo(getPosition(e).X, getPosition(e).Y);
+        ctx.lineTo(getPosition(e).X, getPosition(e).Y);
+        ctx.stroke();
+      } else {
+        ctx.clearRect(getPosition(e).X, getPosition(e).Y, ctx.lineWidth,ctx.lineWidth);
+      };
+    } break;
+    case "mousemove": {
+      if (drawble) {
+        if(mode === 'brush') {
           ctx.lineTo(getPosition(e).X, getPosition(e).Y);
           ctx.stroke();
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
-        }
-      }
+        } else {
+          ctx.clearRect(getPosition(e).X, getPosition(e).Y, ctx.lineWidth, ctx.lineWidth)
+        };
+      };
+    } break;
+    case "mouseup":
+    case "mouseout": {
+      drawble = false;
+      ctx.closePath();
+    } break;
+    };
+    };
+    
+  // 직선그리기
+  function drawingPc(e) {
+    switch (e.type) {
+      case "mousedown": {
+        backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
+        drawble = true;
+
+        // 8은 margin 값
+        let scrollTop = canvas.offset().top + window.scrollY - 8;
+        sx = e.clientX - canvas.offset().left;
+        sy = e.clientY - canvas.offset().top + scrollTop;
+      };
       break;
       
-      case "mouseup":
-        case "mouseout": {
-          drawble = false;
-          ctx.closePath();
-        }
-        break;
-      };
-    };
-    
-    // 직선그리기
-    function drawingPc(e) {
-      switch (e.type) {
-        case "mousedown": {
-          backup = ctx.getImageData(0, 0, canvas.width(), canvas.height());
-          drawble = true;
-
-          // 8은 margin 값
-          let scrollTop = canvas.offset().top + window.scrollY - 8;
-          sx = e.clientX - canvas.offset().left;
-          sy = e.clientY - canvas.offset().top + scrollTop;
-        };
-        break;
-        
-        case "mouseover":
-        case "mousemove": {
-          if (drawble) {
-            ctx.putImageData(backup, 0, 0);
-            ctx.beginPath();
-            ctx.moveTo(sx, sy);
-            ctx.lineTo(getPosition(e).X, getPosition(e).Y);
-            ctx.stroke();
-            ctx.lineCap = 'round';
-            ctx.lineJoin = 'round';
-          };
-        };
-        break;
-    
-        case "mouseup":
-          case "mouseout": {
-            drawble = false;
-          };
-          break;
-          case "mouseover": {
-            drawble = true;
-          };
-          break;
-        };
-    };
-  
-  // mobile draw 이벤트 함수
-  function drawMo(e) {
-    switch (e.type) {
-      case "touchstart": {
-        console.log('t s ',canvas.offset().top + window.scrollY + 8);
-        // BodyScrollDisAble();
-        drawble = true;
-        ctx.beginPath();
-        ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
-        // ctx.stroke();
-      }
-      break;
-      case "touchmove": {
+      case "mouseover":
+      case "mousemove": {
         if (drawble) {
-          e.preventDefault();
-          
-          ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+          ctx.putImageData(backup, 0, 0);
+          ctx.beginPath();
+          ctx.moveTo(sx, sy);
+          ctx.lineTo(getPosition(e).X, getPosition(e).Y);
           ctx.stroke();
           ctx.lineCap = 'round';
           ctx.lineJoin = 'round';
-        }
-      }
+        };
+      };
       break;
-      case "touchend":
-        case "touchcancel": {
+  
+      case "mouseup":
+        case "mouseout": {
           drawble = false;
-          ctx.closePath();
-        }
+        };
+        break;
+        case "mouseover": {
+          drawble = true;
+        };
         break;
       };
-    };
+  };
+  
+// mobile draw 이벤트 함수
+function drawMo(e) {
+  switch (e.type) {
+    case "touchstart": {
+      console.log('t s ',canvas.offset().top + window.scrollY + 8);
+      // BodyScrollDisAble();
+      drawble = true;
+      ctx.beginPath();
+      ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+      // ctx.stroke();
+    } break;
+    case "touchmove": {
+      if (drawble) {
+        e.preventDefault();
+        
+        ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+        ctx.stroke();
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+      }
+    } break;
+    case "touchend":
+    case "touchcancel": {
+      drawble = false;
+      ctx.closePath();
+    } break;
+  };
+};
     
-    function getPosition(e) {
-      let x = e.pageX - canvas.offset().left;
-      let y = e.pageY - canvas.offset().top;
-      return { X: x, Y: y };
-    };
+function getPosition(e) {
+  let x = e.pageX - canvas.offset().left;
+  let y = e.pageY - canvas.offset().top;
+  return { X: x, Y: y };
+};
 
-    function getMobilePosition(e) {
-      var x = e.originalEvent.changedTouches[0].pageX - canvas.offset().left;
+function getMobilePosition(e) {
+  var x = e.originalEvent.changedTouches[0].pageX - canvas.offset().left;
   var y = e.originalEvent.changedTouches[0].pageY - canvas.offset().top;
   return { X: x, Y: y };
 };
@@ -341,8 +354,8 @@ function lineChange(e) {
   };
 };
   
-  // 화면 조절 함수
-  function canvasResize() {
+// 화면 조절 함수
+function canvasResize() {
   canvas[0].width = div.width();
   canvas[0].height = div.height();
   
@@ -373,6 +386,11 @@ function rgb2hex($val) {
   };
 };
 
+function clearBrush () {
+
+};
+
+
 function reset() {
   canvasResize();
   
@@ -399,6 +417,20 @@ function reset() {
 };
 
 function buttonEvent() {
+  $brush.on('click', function(){
+    $(this).addClass('active');
+    $erase.removeClass('active');
+    console.log(mode,'mode');
+    mode = 'brush';
+  });
+  
+  $erase.on('click', function(){
+    $(this).addClass('active');
+    $brush.removeClass('active');
+    console.log(mode,'mode');
+    mode = 'erase';
+  });
+
   $dashLine.on('click', function (e) {
     $(this).toggleClass('active');
     
@@ -417,8 +449,6 @@ function buttonEvent() {
     
     $('.hide').select();
     let copy = document.execCommand('copy');
-    
-    console.log(copy);
     
     $('.hide').remove();
   });
@@ -448,4 +478,4 @@ $.fn.hitTestObject = function (obj) {
   compare.right = compare.left + obj.outerWidth();
   compare.bottom = compare.top + obj.outerHeight();
   return (!(compare.right < bounds.left || compare.left > bounds.right || compare.bottom < bounds.top || compare.top > bounds.bottom));
-}
+};
