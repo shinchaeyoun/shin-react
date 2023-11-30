@@ -160,19 +160,7 @@ const imgArr = [
   './img/drawing_line/line_2.png',
   './img/drawing_line/line_3.png',
 ];
-// const imgArr = [
-//   './img/drawing_line/line_image_1.png',
-//   './img/drawing_line/line_image_2.png',
-//   './img/drawing_line/line_image_3.png',
-//   './img/drawing_line/line_image_4.png',
-//   './img/drawing_line/line_image_5.png',
-//   './img/drawing_line/line_image_6.png',
-//   './img/drawing_line/line_image_7.png',
-//   './img/drawing_line/line_image_8.png',
-//   './img/drawing_line/line_image_9.png',
-//   './img/drawing_line/line_image_10.png',
-// ];
-let imgNum = Math.round(Math.random()*imgArr.length);
+let imgNum = Math.round(Math.random()*(imgArr.length-1));
 
 function coloring () {
   div.prepend('<canvas id="canvas2"></canvas>');
