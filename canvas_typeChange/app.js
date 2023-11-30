@@ -194,7 +194,7 @@ function coloring() {
     height = maxHeigth;
     x = x - width / 2;
 
-    // ctx2.drawImage(bgImage, x, 0, width, maxHeigth);
+    ctx2.drawImage(bgImage, x, 0, width, maxHeigth);
   };
 
   canvas2.on('mousedown', function (e) {
@@ -227,15 +227,14 @@ function coloring() {
   canvas2.on('touchstart', function (e) {
     drawble = true;
 
-    if (mode === 'brush') {
+    // if (mode === 'brush') {
       console.log('t s ', canvas.offset().top + window.scrollY + 8);
       ctx.beginPath();
       ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
       ctx.stroke();
-    } else {
-      console.log('else ?');
-      ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth, ctx.lineWidth);
-    };
+    // } else {
+    //   ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth, ctx.lineWidth);
+    // };
   });
   canvas2.on('touchmove', function (e) {
     if (drawble) {
@@ -335,9 +334,10 @@ function drawingPc(e) {
 function drawMo(e) {
   switch (e.type) {
     case "touchstart": {
+      drawble = true;
+
       if (mode === 'brush') {
         console.log('t s ', canvas.offset().top + window.scrollY + 8);
-        drawble = true;
         ctx.beginPath();
         ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
         ctx.stroke();
@@ -476,14 +476,12 @@ function buttonEvent() {
   $brush.on('click', function () {
     $(this).addClass('active');
     $erase.removeClass('active');
-    console.log(mode, 'mode');
     mode = 'brush';
   });
 
   $erase.on('click', function () {
     $(this).addClass('active');
     $brush.removeClass('active');
-    console.log(mode, 'mode');
     mode = 'erase';
   });
 
