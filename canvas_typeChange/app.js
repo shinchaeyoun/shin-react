@@ -160,31 +160,45 @@ function hittest($obj) {
   // 선긋기 END
   
   
-  function coloring () {
-    const imgArr = [
-      './img/drawing_line/line_image_1.png',
-      './img/drawing_line/line_image_2.png',
-      './img/drawing_line/line_image_3.png',
-      './img/drawing_line/line_image_4.png',
-      './img/drawing_line/line_image_5.png',
-      './img/drawing_line/line_image_6.png',
-      './img/drawing_line/line_image_7.png',
-      './img/drawing_line/line_image_8.png',
-      './img/drawing_line/line_image_9.png',
-      './img/drawing_line/line_image_10.png',
-    ];
+function coloring () {
+  const imgArr = [
+    './img/drawing_line/line_image_1.png',
+    './img/drawing_line/line_image_2.png',
+    './img/drawing_line/line_image_3.png',
+    './img/drawing_line/line_image_4.png',
+    './img/drawing_line/line_image_5.png',
+    './img/drawing_line/line_image_6.png',
+    './img/drawing_line/line_image_7.png',
+    './img/drawing_line/line_image_8.png',
+    './img/drawing_line/line_image_9.png',
+    './img/drawing_line/line_image_10.png',
+  ];
 
-    const imgNum = Math.round(Math.random()*imgArr.length);
-    let addImg = new Image();
-    addImg.src = imgArr[imgNum];
+  const imgNum = Math.round(Math.random()*imgArr.length);
+  let addImg = new Image();
+  addImg.src = imgArr[imgNum];
 
-    addImg.onload = function (){
-      ctx.drawImage(addImg, 10, 10);
-    };
+  let x = canvas.width()/2;
+  let y = canvas.height()/2
+  
+  addImg.onload = function (e){
+  console.log(imgNum);
+    let maxWidth = canvas.width();
+    let maxHeigth = canvas.height();
+    let width = this.width;
+    let height = this.height;
+    let ratio = 0;
+    let x = maxWidth / 2;
+   
+    ratio = maxHeigth / height;
+    width = width*ratio;
+    height = maxHeigth;
+    x = x-width/2
 
-    // or 캔버스 태그 안에 이미지 태그를 append
-    // canvas.append() 
+    ctx.drawImage(addImg, x,0,width,maxHeigth);
+    // ctx.strokeRect(x,0,width,maxHeigth)
   };
+};
 
   
   // pc draw 이벤트 함수

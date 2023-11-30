@@ -181,13 +181,6 @@ input[type="color" i] {
      z-index: -1; 
 } */
 
-.canvas_container canvas {
-    background-size: contain;
-    background-position: center;
-
-    object-fit: contain;
-}
-
 
 .page_controls {
     display: flex;
