@@ -32,14 +32,14 @@ function canvasTypeFn ($type){
     case 'coloring': {
       isColoring = true;
       coloring();
-      canvas.on('mousedown', drawPc);
-      canvas.on('mousemove', drawPc);
-      canvas.on('mouseup', drawPc);
-      canvas.on('mouseout', drawPc);
-      canvas.on('touchstart', drawMo);
-      canvas.on('touchend', drawMo);
-      canvas.on('touchcancle', drawMo);
-      canvas.on('touchmove', drawMo);
+      // canvas.on('mousedown', drawPc);
+      // canvas.on('mousemove', drawPc);
+      // canvas.on('mouseup', drawPc);
+      // canvas.on('mouseout', drawPc);
+      // canvas.on('touchstart', drawMo);
+      // canvas.on('touchend', drawMo);
+      // canvas.on('touchcancle', drawMo);
+      // canvas.on('touchmove', drawMo);
     }; break;
   };
 };
@@ -175,14 +175,20 @@ const imgArr = [
 let imgNum = Math.round(Math.random()*imgArr.length);
 
 function coloring () {
-  div.prepend('<div id="canvas2"></div>');
+  div.prepend('<canvas id="canvas2"></canvas>');
   canvas2 = $('#canvas2');
+  ctx2 = canvas2[0].getContext('2d');
+
+  canvas.css({
+    position: 'relative',
+    zIndex: 100,
+  })
   canvas2.css({
-    position: 'absolute', top: 0, left:0
+    position: 'absolute', top: 0, left:0,
+    zIndex: 200,
   });
-  canvas2.width = div.width();
-  canvas2.height = div.height();
-  // ctx2 = canvas2[0].getContext("2d");
+  canvas2[0].width = div.width();
+  canvas2[0].height = div.height();
 
   let bgImage = new Image();
   bgImage.src = imgArr[imgNum];
@@ -200,8 +206,65 @@ function coloring () {
     height = maxHeigth;
     x = x-width/2;
 
-    ctx.drawImage(bgImage, x, 0, width, maxHeigth);
+    ctx2.drawImage(bgImage, x, 0, width, maxHeigth);
   };
+
+  canvas2.on('mousedown', function (e) {
+    drawble = true;
+    if(mode === 'brush') {
+      ctx.beginPath();
+      ctx.moveTo(getPosition(e).X, getPosition(e).Y);
+      ctx.lineTo(getPosition(e).X, getPosition(e).Y);
+      ctx.stroke();
+    } else {
+      ctx.clearRect(getPosition(e).X, getPosition(e).Y, ctx.lineWidth,ctx.lineWidth);
+    };
+  });
+  canvas2.on('mousemove', function (e) {
+    if (drawble) {
+      if(mode === 'brush') {
+        ctx.lineTo(getPosition(e).X, getPosition(e).Y);
+        ctx.stroke();
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+      } else {
+        ctx.clearRect(getPosition(e).X, getPosition(e).Y, ctx.lineWidth, ctx.lineWidth)
+      };
+    };
+  });
+  canvas2.on('mouseout mouseup', function (e) {
+    drawble = false;
+    ctx.closePath();
+  });
+  canvas2.on('touchstart', function (e) {
+    if(mode === 'brush') {
+      console.log('t s ',canvas.offset().top + window.scrollY + 8);
+      drawble = true;
+      ctx.beginPath();
+      ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+      ctx.stroke();
+    } else {
+      ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth,ctx.lineWidth);
+    };
+  });
+  canvas2.on('touchmove', function (e) {
+    if (drawble) {
+      e.preventDefault();
+      
+      if(mode === 'brush') {
+        ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
+        ctx.stroke();
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+      } else {
+        ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth,ctx.lineWidth);
+      };
+    }
+  });
+  canvas2.on('touchend touchcancel', function (e) {
+    drawble = false;
+    ctx.closePath();
+  });
 };
   
   // pc draw 이벤트 함수
