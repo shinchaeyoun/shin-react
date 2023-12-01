@@ -18,7 +18,9 @@ li {
 }
 
 .container {
-  position: absolute;
+  position: relative;
+  margin: 50px auto 0px;
+  padding: 20px;
   width: 800px;
   height: 600px;
   border: 1px solid #ccc;
@@ -49,22 +51,22 @@ li {
 }
 .container .questionPosition ul li.correct {
   background-image: url(./img/quiz_p_o.png);
-  background-size: contain;
+  background-size: 40px;
   background-repeat: no-repeat;
 }
 .container .questionPosition ul li.incorrect {
   background-image: url(./img/quiz_p_x.png);
-  background-size: contain;
+  background-size: 40px;
   background-repeat: no-repeat;
 }
 .container .quiz_content {
+  display: none;
   position: relative;
   width: 100%;
   height: 100%;
 }
 .container .quiz_content .title {
   display: flex;
-  flex-wrap: wrap;
   height: 40px;
 }
 .container .quiz_content .title .questionNum {
@@ -74,27 +76,23 @@ li {
   margin-left: 30px;
   font-size: 26px;
 }
-.container .quiz_content .title .notice {
-  margin-left: 50px;
-  width: 100%;
-}
 .container .quiz_content .answer {
   position: relative;
-  width: 100%;
-  height: 85%;
+  width: 800px;
+  height: 520px;
   padding: 40px;
   box-sizing: border-box;
 }
-.container .quiz_content .answer .answerTit {
+.container .quiz_content .answer ul li.answerTit {
   position: relative;
   display: block;
   height: 50px;
   line-height: 50px;
 }
-.container .quiz_content .answer .answerTit.active {
+.container .quiz_content .answer ul li.answerTit.active {
   color: #3131ff;
 }
-.container .quiz_content .answer .answerTit.active::after {
+.container .quiz_content .answer ul li.answerTit.active::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -105,90 +103,16 @@ li {
   border-radius: 50%;
   transform: translateY(-50%);
 }
-.container .quiz_content .answer .answerTit.correct {
+.container .quiz_content .answer ul li.answerTit.correct {
   color: #f00;
   font-weight: bold;
 }
 .container .quiz_content .answer .input {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 50px;
   width: 300px;
   height: 40px;
   line-height: 40px;
   font-size: 18px;
   text-align: center;
-}
-.container .quiz_content .answer .input:last-child {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.container .quiz_content .answer #canvas_answer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 40px;
-  z-index: -1;
-}
-.container .quiz_content .answer #canvas {
-  z-index: 1;
-}
-.container .quiz_content .answer .objContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.container .quiz_content .answer .objContainer .content {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.container .quiz_content .answer .objContainer .content .obj {
-  margin-bottom: 120px;
-  width: 20px;
-  height: 20px;
-  background-color: #ddd;
-  border-radius: 50%;
-}
-.container .quiz_content .answer .objContainer .content .obj:last-child {
-  margin-bottom: 0;
-}
-.container .quiz_content .answer .objContainer .drag {
-  left: 100px;
-}
-.container .quiz_content .answer .objContainer .drag .dragObj {
-  z-index: 100;
-  background-color: #fde400;
-}
-.container .quiz_content .answer .objContainer .drop {
-  right: 100px;
-  z-index: -2;
-}
-.container .quiz_content .answer .fake {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-.container .quiz_content .answer .fake .wrap {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 100px;
-}
-.container .quiz_content .answer .fake .wrap .fakeObj {
-  margin-bottom: 120px;
-  width: 20px;
-  height: 20px;
-  background-color: #ddd;
-  border-radius: 50%;
-}
-.container .quiz_content .answer .fake .wrap .fakeObj:last-child {
-  margin-bottom: 0;
 }
 .container .quiz_content .resultBtn {
   display: flex;
@@ -207,18 +131,14 @@ li {
 .container .quiz_content .resultBtn div:last-child {
   margin-right: 0;
 }
-.container .quiz_content .resultBtn .preview.active {
-  font-weight: bold;
-  background-color: #ddd;
+.container .quiz_content .resultBtn div.preview.active {
+  background-color: rgba(104, 213, 255, 0.2588235294);
 }
 .container .quiz_content .nextBtn,
 .container .quiz_content .lastBtn {
-  display: none;
-  float: right;
-  height: 40px;
-}
-.container .quiz_content .nextBtn > div,
-.container .quiz_content .lastBtn > div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 150px;
   height: 40px;
   text-align: center;
@@ -226,8 +146,78 @@ li {
   border: 1px solid #000;
   border-radius: 20px;
 }
-.container .resultPage {
-  display: none;
+.container .drawing .answer {
+  overflow: hidden;
+  position: relative;
+}
+.container .drawing .answer #canvas_answer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 40px;
+  z-index: -1;
+}
+.container .drawing .answer #canvas {
+  z-index: 1;
+}
+.container .drawing .answer .objContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .drawing .answer .objContainer .content {
+  position: absolute;
+  top: 100px;
+}
+.container .drawing .answer .objContainer .content .obj {
+  margin-bottom: 120px;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+.container .drawing .answer .objContainer .content .obj:last-child {
+  margin-bottom: 0;
+}
+.container .drawing .answer .objContainer .drag {
+  left: 100px;
+}
+.container .drawing .answer .objContainer .drag .dragObj {
+  z-index: 100;
+}
+.container .drawing .answer .objContainer .drag .dragObj:nth-of-type(1) {
+  background-color: #fd6500;
+}
+.container .drawing .answer .objContainer .drag .dragObj:nth-of-type(2) {
+  background-color: #ff9100;
+}
+.container .drawing .answer .objContainer .drag .dragObj:nth-of-type(3) {
+  background-color: #fde400;
+}
+.container .drawing .answer .objContainer .drop {
+  right: 100px;
+}
+.container .drawing .answer .fake {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.container .drawing .answer .fake .wrap {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+.container .drawing .answer .fake .wrap .fakeObj {
+  margin-bottom: 120px;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
 }
 .container .resultPage .title {
   display: block;
@@ -242,15 +232,11 @@ li {
 .container .resultPage .quizResult ul li {
   width: 33.3333333333%;
   height: 300px;
-  border: 1px solid #ddd;
+  border: 1px solid #000;
 }
 .container .resultPage .quizResult ul li:nth-of-type(even) {
   border-left: none;
   border-right: none;
-}
-.container .resultPage .quizResult ul li:last-child {
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
 }
 .container .resultPage .quizResult ul li .questionNum {
   display: block;
@@ -262,7 +248,6 @@ li {
   height: 240px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto;
 }
 .container .resultPage .quizResult ul li .question_result.true {
   background-image: url(./img/quiz_final_o.png);
@@ -308,26 +293,4 @@ li {
   height: 20px;
   border: 1px solid #000;
   cursor: pointer;
-}
-.container .result div {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-.container .result div span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.container .result .correct {
-  background-color: rgba(164, 214, 255, 0.3137254902);
-}
-.container .result .chance,
-.container .result .incorrect {
-  background-color: rgba(255, 123, 123, 0.3882352941);
 }/*# sourceMappingURL=style.css.map */
