@@ -292,8 +292,6 @@ function drawMo(e) {
       if (drawble) {
         e.preventDefault();
 
-        
-
         if (mode === 'brush') {
           ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
           ctx.stroke();
