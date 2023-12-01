@@ -32,14 +32,6 @@ function canvasTypeFn($type) {
     case 'coloring': {
       isColoring = true;
       coloring();
-      // canvas.on('mousedown', drawPc);
-      // canvas.on('mousemove', drawPc);
-      // canvas.on('mouseup', drawPc);
-      // canvas.on('mouseout', drawPc);
-      // canvas.on('touchstart', drawMo);
-      // canvas.on('touchend', drawMo);
-      // canvas.on('touchcancle', drawMo);
-      // canvas.on('touchmove', drawMo);
     }; break;
   };
 };
@@ -155,6 +147,7 @@ function hittest($obj) {
 };
 // 선긋기 END
 
+// coloring
 const imgArr = [
   './img/drawing_line/line_1.png',
   './img/drawing_line/line_2.png',
@@ -197,63 +190,14 @@ function coloring() {
     ctx2.drawImage(bgImage, x, 0, width, maxHeigth);
   };
 
-  canvas2.on('mousedown', function (e) {
-    drawble = true;
-    if (mode === 'brush') {
-      ctx.beginPath();
-      ctx.moveTo(getPosition(e).X, getPosition(e).Y);
-      ctx.lineTo(getPosition(e).X, getPosition(e).Y);
-      ctx.stroke();
-    } else {
-      ctx.clearRect(getPosition(e).X, getPosition(e).Y, ctx.lineWidth, ctx.lineWidth);
-    };
-  });
-  canvas2.on('mousemove', function (e) {
-    if (drawble) {
-      if (mode === 'brush') {
-        ctx.lineTo(getPosition(e).X, getPosition(e).Y);
-        ctx.stroke();
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-      } else {
-        ctx.clearRect(getPosition(e).X, getPosition(e).Y, ctx.lineWidth, ctx.lineWidth)
-      };
-    };
-  });
-  canvas2.on('mouseout mouseup', function (e) {
-    drawble = false;
-    ctx.closePath();
-  });
-  canvas2.on('touchstart', function (e) {
-    drawble = true;
-
-    // if (mode === 'brush') {
-      console.log('t s ', canvas.offset().top + window.scrollY + 8);
-      ctx.beginPath();
-      ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
-      ctx.stroke();
-    // } else {
-    //   ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth, ctx.lineWidth);
-    // };
-  });
-  canvas2.on('touchmove', function (e) {
-    if (drawble) {
-      e.preventDefault();
-
-      if (mode === 'brush') {
-        ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
-        ctx.stroke();
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-      } else {
-        ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth, ctx.lineWidth);
-      };
-    }
-  });
-  canvas2.on('touchend touchcancel', function (e) {
-    drawble = false;
-    ctx.closePath();
-  });
+  canvas2.on('mousedown', drawPc);
+  canvas2.on('mousemove', drawPc);
+  canvas2.on('mouseup', drawPc);
+  canvas2.on('mouseout', drawPc);
+  canvas2.on('touchstart', drawMo);
+  canvas2.on('touchend', drawMo);
+  canvas2.on('touchcancle', drawMo);
+  canvas2.on('touchmove', drawMo);
 };
 
 // pc draw 이벤트 함수
@@ -337,7 +281,6 @@ function drawMo(e) {
       drawble = true;
 
       if (mode === 'brush') {
-        console.log('t s ', canvas.offset().top + window.scrollY + 8);
         ctx.beginPath();
         ctx.moveTo(getMobilePosition(e).X, getMobilePosition(e).Y);
         ctx.stroke();
@@ -349,6 +292,8 @@ function drawMo(e) {
       if (drawble) {
         e.preventDefault();
 
+        
+
         if (mode === 'brush') {
           ctx.lineTo(getMobilePosition(e).X, getMobilePosition(e).Y);
           ctx.stroke();
@@ -356,7 +301,6 @@ function drawMo(e) {
           ctx.lineJoin = 'round';
         } else {
           ctx.clearRect(getMobilePosition(e).X, getMobilePosition(e).Y, ctx.lineWidth, ctx.lineWidth);
-          ctx.stroke();
         };
       }
     } break;
