@@ -1,9 +1,16 @@
 $(function () {
+	
+	info = new quizType();
+
 	init();
 	clickEventFn();
 });
 
-let pageNum = 0,
+// 타입 테스트
+
+
+let info,
+	pageNum = 0,
 	resultArr = [],
 	nowType, nowCnt,
 	posCon, quizPos,
@@ -99,8 +106,7 @@ function clickEventFn() {
 	});
 
 	lastBtn.on('click', function () {
-		console.log('??? last click?');
-		pageNum = contents.length;
+		pageNum = contents.length - 1;
 		pageMove(pageNum);
 	});
 
@@ -113,7 +119,6 @@ function clickEventFn() {
 };
 
 function nextFn() {
-	console.log('여기서 문제인가?');
 	pageNum++;
 	pageMove(pageNum);
 
@@ -122,15 +127,21 @@ function nextFn() {
 };
 
 function pageMove($pageNum) {
+	// nowType = contents.eq($pageNum).attr('data-type');
+	nowType = info.quizType[$pageNum];
 	content = contents.eq($pageNum);
-	nowType = contents.eq($pageNum).attr('data-type');
+
+	for (let i = 0; i < contents.length; i++) {
+		let contentType = contents.eq(i).attr('data-type');
+		// if(contentType == nowType)
+		console.log(contentType == nowType,i);
+	}
 
 	submitbtn = content.find($('.submitBtn'));
 	previewBtn = content.find($('.preview'));
 	nextBtn = content.find($('.nextBtn'));
 	resultBtn = content.find($('.resultBtn'));
 	lastBtn = content.find($('.lastBtn'));
-
 	
 	contents.hide();
 	content.show();
@@ -149,12 +160,16 @@ function typeDivision() {
 
 	if (nowType == 'single') {
 		singleFn();
+		console.log('singleFn');
 	} else if (nowType == 'essay') {
 		essayFn();
+		console.log('essayFn');
 	} else if (nowType == 'drawing') {
 		drawingFn();
+		console.log('drawingFn');
 	} else if (nowType == 'resultPage') {
 		resultPageFn();
+		console.log('resultPageFn');
 	};
 
 	if (isReturn) {
@@ -178,12 +193,7 @@ function typeDivision() {
 
 function submitFn() {
 	resultBtn.hide();
-
-	if(pageNum == contents.length-2) {
-		lastBtn.show();
-	} else {
-		nextBtn.show();
-	};
+	nextBtn.show();
 	
 	if (resultArr[pageNum] == true) {
 		$tabMenu.eq(pageNum).removeClass('incorrect');
@@ -369,7 +379,6 @@ function drawingFn() {
 
 		pageNum++;
 		pageMove(pageNum);
-
 
 		resultBtn.show();
 		nextBtn.hide();

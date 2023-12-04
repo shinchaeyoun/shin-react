@@ -60,7 +60,6 @@ li {
   background-repeat: no-repeat;
 }
 .container .quiz_content {
-  display: none;
   position: relative;
   width: 100%;
   height: 100%;
@@ -146,60 +145,69 @@ li {
   border: 1px solid #000;
   border-radius: 20px;
 }
-.container .drawing .answer {
+.container .page1 {
+  display: none;
+}
+.container .page2 {
+  display: none;
+}
+.container .page3 {
+  display: none;
+}
+.container .page3 .answer {
   overflow: hidden;
   position: relative;
 }
-.container .drawing .answer #canvas_answer {
+.container .page3 .answer #canvas_answer {
   position: absolute;
   top: 0;
   left: 0;
   margin: 40px;
   z-index: -1;
 }
-.container .drawing .answer #canvas {
+.container .page3 .answer #canvas {
   z-index: 1;
 }
-.container .drawing .answer .objContainer {
+.container .page3 .answer .objContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.container .drawing .answer .objContainer .content {
+.container .page3 .answer .objContainer .content {
   position: absolute;
   top: 100px;
 }
-.container .drawing .answer .objContainer .content .obj {
+.container .page3 .answer .objContainer .content .obj {
   margin-bottom: 120px;
   width: 20px;
   height: 20px;
   background-color: #ddd;
   border-radius: 50%;
 }
-.container .drawing .answer .objContainer .content .obj:last-child {
+.container .page3 .answer .objContainer .content .obj:last-child {
   margin-bottom: 0;
 }
-.container .drawing .answer .objContainer .drag {
+.container .page3 .answer .objContainer .drag {
   left: 100px;
 }
-.container .drawing .answer .objContainer .drag .dragObj {
+.container .page3 .answer .objContainer .drag .dragObj {
   z-index: 100;
 }
-.container .drawing .answer .objContainer .drag .dragObj:nth-of-type(1) {
+.container .page3 .answer .objContainer .drag .dragObj:nth-of-type(1) {
   background-color: #fd6500;
 }
-.container .drawing .answer .objContainer .drag .dragObj:nth-of-type(2) {
+.container .page3 .answer .objContainer .drag .dragObj:nth-of-type(2) {
   background-color: #ff9100;
 }
-.container .drawing .answer .objContainer .drag .dragObj:nth-of-type(3) {
+.container .page3 .answer .objContainer .drag .dragObj:nth-of-type(3) {
   background-color: #fde400;
 }
-.container .drawing .answer .objContainer .drop {
+.container .page3 .answer .objContainer .drop {
   right: 100px;
 }
-.container .drawing .answer .fake {
+.container .page3 .answer .fake {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -207,12 +215,12 @@ li {
   height: 100%;
   z-index: 1;
 }
-.container .drawing .answer .fake .wrap {
+.container .page3 .answer .fake .wrap {
   position: absolute;
   top: 100px;
   left: 100px;
 }
-.container .drawing .answer .fake .wrap .fakeObj {
+.container .page3 .answer .fake .wrap .fakeObj {
   margin-bottom: 120px;
   width: 20px;
   height: 20px;

@@ -1,5 +1,4 @@
-$(function(){
-
+$(function () {
   const imgArr = new Array();
   imgArr[0] = 'https://shinchaeyoun.github.io/shin/seed_SHIN/img/img1.JPG';
   imgArr[1] = 'https://shinchaeyoun.github.io/shin/seed_SHIN/img/img2.JPG';
@@ -14,57 +13,42 @@ $(function(){
   imgArr[10] = 'https://shinchaeyoun.github.io/shin/seed_SHIN/img/img11.JPG';
 
 
-  // 새로고침 이미지 변경
-  $(window).load(function(){
-    const showImg = function(){
-      const $imgNum = Math.round(Math.random()*10);
-      let $objImg1 = $('#introImg');
-      let $objImg2 = $('#blurImg');
+  const svg = $('#svg__circle');
+  const bgMask = $('#bg_mask');
+  const rotate = $('#rotate_text');
 
-      $objImg1.attr('src',imgArr[$imgNum]);
-      $objImg2.attr('src',imgArr[$imgNum]);
+
+  // 새로고침 이미지 변경
+  $(window).load(function () {
+    const showImg = function (e) {
+      const imgNum = Math.round(Math.random() * 10);
+      let objImg1 = $('#introImg');
+      let objImg2 = $('#blurImg');
+
+      objImg1.attr('src', imgArr[imgNum]);
+      objImg2.attr('src', imgArr[imgNum]);
     };
 
     showImg();
   });
-  
-  const $svg = $('#svg__circle');
-  const $bgMask = $('#bg_mask');
-  const $rotate = $('#rotate_text');
-  
-  $(window).on('scroll',function(){
-  $svg.css({
-    width: 100 + this.scrollY,
-    height : 100 + this.scrollY
-  });
 
-  $bgMask.css({
-    clipPath: `circle(${50+this.scrollY/2}px at center)`
-  });
-
-  if(window.scrollY > 0){
-    $rotate.css({
-      width: 150+this.scrollY *1.5,
-      height:150+this.scrollY*1.5,
-      transform:`translate(-50%,-50%), rotate(${this.scrollY/2}deg)`,
+  
+  $(window).on('scroll', function (e) {
+    svg.css({
+      width: 100 + this.scrollY,
+      height: 100 + this.scrollY,
     });
-  }
-  
 
+    bgMask.css({
+      clipPath: `circle(${50 + this.scrollY / 2}px at center)`
+    });
+
+    if (window.scrollY > 0) {
+      rotate.css({
+        width: 150 + this.scrollY * 1.5,
+        height: 150 + this.scrollY * 1.5,
+        transform: `translate(-50%,-50%), rotate(${this.scrollY / 2}deg)`,
+      });
+    }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });

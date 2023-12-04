@@ -72,7 +72,6 @@ li {
   }
 
   .quiz_content {
-    display: none;
     position: relative;
     width: 100%;
     height: 100%;
@@ -168,20 +167,30 @@ li {
 
     .nextBtn,
     .lastBtn {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 150px;
-      height: 40px;
-      text-align: center;
-      line-height: 40px;
-      border: 1px solid #000;
-      border-radius: 20px;
-    }
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid #000;
+        border-radius: 20px;
+      }
 
   }
 
-  .drawing {
+  .page1 {
+    display: none;
+  }
+
+  .page2 {
+    display: none;
+  }
+
+  .page3 {
+    display: none;
+
     .answer {
       overflow: hidden;
       position: relative;

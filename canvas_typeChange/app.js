@@ -5,6 +5,7 @@ function init() {
   colorChange();
   lineChange();
 };
+
 function canvasTypeFn($type) {
   switch ($type) {
     case 'draw': {

@@ -72,6 +72,35 @@ body {
   }
 }
 
+#bg_blur {
+  width: 100vw;
+  height: 300vh;
+
+  filter: blur(10px);
+}
+
+#bg_txt{
+  width: 100vw;
+  height: 300vh;
+
+  h2 {
+    font-size: 42px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  div {
+    width: 800px;
+    font-size: 18px;
+    border-bottom: 1px solid #000;
+  }
+}
+
+#bg_category {
+
+}
 
 .scroll_ani{
   position: fixed;
