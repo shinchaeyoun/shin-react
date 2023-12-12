@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Main() {
+function Explore() {
   return(
     <>
-      <div> hi</div>
+      Explore
     </>
   )
 }
 
-export default Main;
+export default Explore;

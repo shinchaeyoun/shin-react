@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Main() {
+function Submit() {
   return(
     <>
-      <div> hi</div>
+Submit
     </>
   )
 }
 
-export default Main;
+export default Submit;
