@@ -7,17 +7,22 @@ import { AppContext } from '../Router';
 import { ReactComponent as UnhappyFace } from '../assets/images/unhappy-face.svg';
 
 const Title = styled(S.Title)`
-  
+  font-size: 34px;
 `
 const EmptyBookmark = styled.div`
   text-align: center;
+
+  padding: 80px 0;
+
+  > p {
+    margin-top: 20px;
+  }
 `
 const Main = styled(S.Main)`
   width: 640px;
   min-height: 400px;
 
-  padding: 148px 0;
-  border: 1px solid #f00;
+  padding: 60px 0;
 
   font-size: 20px;
   font-family: ${({theme}) => theme.fonts.outfit};
