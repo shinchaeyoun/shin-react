@@ -4,5 +4,10 @@ import reset from "styled-reset";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
+
+  *{box-sizing:border-box;}
+  body {
+    position: relative;
+  }
 `;
 export default GlobalStyles;
