@@ -14,6 +14,9 @@ import { ReactComponent as Tools } from '../assets/images/menu.svg';
 import { ReactComponent as Community } from '../assets/images/menu.svg';
 import { ReactComponent as Podcast } from '../assets/images/menu.svg';
 
+
+import './Header.scss';
+
 const NavBorderBox = styled(S.BorderBox)`
   padding: 0 10px;
   height: 48px;
@@ -44,6 +47,7 @@ const DownMenu = styled(S.ShadowBox)`
   border-width: 2px;
 
   background-color: #fff;
+  transition: opacity .3s ease-in-out;
 
   ${MenuItem}{
     border-bottom: 2px solid #000;
@@ -149,23 +153,32 @@ function Header() {
               }}>
               Explore <Arrow width='20px' height='20px'/>
               <Transition
-                in={isDownMenu} timeout={300}
+                in={isDownMenu}
+                timeout={500}
                 onEnter={() => console.log('onEnter')}
                 onEntering={() => console.log('onEntering')}
-                onEntered={() => console.log('onEntered','true 일 때')}
+                onEntered={() => console.log('onEntered')}
                 onExit={() => console.log('onExit')}
                 onExiting={() => console.log('onExiting')}
-                onExited={() => console.log('onExited', 'false 일 때')}
+                onExited={() => console.log('onExited')}
               >
-                {state => (
-                  <DownMenu as="ul" show={isDownMenu}>
-                    {state}
-                    <MenuItem><Tools width='20px' height='20px'/>Tools</MenuItem>
-                    <MenuItem><Community  width='20px' height='20px'/>Communities</MenuItem>
-                    <MenuItem><Podcast width='20px' height='20px'/>Podcasts</MenuItem>
-                  </DownMenu>
-                )}
-              </Transition>
+        {(state) => {
+          const cssClasses = [
+            'Modal',
+            state === 'entering'
+              ? 'ModalOpen'
+              : state === 'exiting'
+              ? 'ModalClosed'
+              : null,
+          ];
+          return (
+            <div className={cssClasses.join(' ')}>
+              <h1>A Modal</h1>
+                Dismiss
+            </div>
+          );
+        }}
+      </Transition>
               {/* {
                 }
                 isDownMenu ?
