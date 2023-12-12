@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import Transition from 'react-transition-group/Transition';
+
 import styled from 'styled-components';
 import S from '../Styles/GlobalBlock';
 
@@ -8,18 +10,60 @@ import { ReactComponent as Arrow } from "../assets/images/arrow-down.svg";
 import { ReactComponent as ArrowUp } from "../assets/images/arrow-up.svg";
 import { ReactComponent as Bookmark } from "../assets/images/bookmark.svg";
 
+import { ReactComponent as Tools } from '../assets/images/menu.svg';
+import { ReactComponent as Community } from '../assets/images/menu.svg';
+import { ReactComponent as Podcast } from '../assets/images/menu.svg';
 
 const NavBorderBox = styled(S.BorderBox)`
   padding: 0 10px;
   height: 48px;
   line-height: 40px;
   text-align: center;
+  
+  &:active{
+    border-bottom-width: 2px;
+    line-height: 42px;
+  }
+`
+const MenuItem = styled.li`
+  display: flex;
+  align-items: center;
+
+  padding: 3px 15px;
+
+  > svg {
+    margin-right: 8px;
+  }
+`
+const DownMenu = styled(S.ShadowBox)`
+  position: absolute;
+  top: 52px;
+  left: 0px;
+
+  width: 200px;
+  border-width: 2px;
+
+  background-color: #fff;
+
+  ${MenuItem}{
+    border-bottom: 2px solid #000;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
 `
 const NavItme = styled(NavBorderBox)`
   display: flex;
   align-items: center;
-  padding-bottom: 2px;
+
+  position: relative;
+
   margin-right: 5px;
+  padding-bottom: 2px;
+
+  color: ${props => props.$fontColor};
+  background-color: ${props => props.$btnColor};
 
   &:last-child {
     margin-right: 0;
@@ -78,6 +122,7 @@ const Nav = styled.nav`
 function Header() {
   const navigate = useNavigate();
   const [isBookmarkNum, setIsBookmarkNum] = useState(0);
+  const [isDownMenu, setIsDownMenu] = useState(false);
 
   return(
     <>
@@ -92,11 +137,46 @@ function Header() {
           </SearchBox>
 
           <NavItemWrap>
-            <NavItme onClick={()=>{navigate('/sponsors')}}>
+            <NavItme onClick={()=>{navigate('/sponsors')}}
+              $btnColor='#667eea' $fontColor='#fff'
+            >
               Sponsors
             </NavItme>
-            <NavItme onClick={()=>{navigate('/explore')}}>
+            <NavItme onClick={()=>{
+              // navigate('/explore');
+                setIsDownMenu(!isDownMenu);
+                console.log(isDownMenu,'isDownMenu');
+              }}>
               Explore <Arrow width='20px' height='20px'/>
+              <Transition
+                in={isDownMenu} timeout={300}
+                onEnter={() => console.log('onEnter')}
+                onEntering={() => console.log('onEntering')}
+                onEntered={() => console.log('onEntered','true 일 때')}
+                onExit={() => console.log('onExit')}
+                onExiting={() => console.log('onExiting')}
+                onExited={() => console.log('onExited', 'false 일 때')}
+              >
+                {state => (
+                  <DownMenu as="ul" show={isDownMenu}>
+                    {state}
+                    <MenuItem><Tools width='20px' height='20px'/>Tools</MenuItem>
+                    <MenuItem><Community  width='20px' height='20px'/>Communities</MenuItem>
+                    <MenuItem><Podcast width='20px' height='20px'/>Podcasts</MenuItem>
+                  </DownMenu>
+                )}
+              </Transition>
+              {/* {
+                }
+                isDownMenu ?
+                <DownMenu as="ul">
+                  <MenuItem><Tools width='20px' height='20px'/>Tools</MenuItem>
+                  <MenuItem><Community  width='20px' height='20px'/>Communities</MenuItem>
+                  <MenuItem><Podcast width='20px' height='20px'/>Podcasts</MenuItem>
+                </DownMenu>
+                :
+                null
+              } */}
             </NavItme>
             <NavItme onClick={()=>{navigate('/submit')}}>
               <ArrowUp width='20px' height='20px'/>
