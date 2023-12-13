@@ -1,21 +1,18 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Transition from 'react-transition-group/Transition';
 
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import S from '../Styles/GlobalBlock';
 
 import { ReactComponent as Arrow } from "../assets/images/arrow-down.svg";
 import { ReactComponent as ArrowUp } from "../assets/images/arrow-up.svg";
 import { ReactComponent as Bookmark } from "../assets/images/bookmark.svg";
 
-import { ReactComponent as Tools } from '../assets/images/menu.svg';
-import { ReactComponent as Community } from '../assets/images/menu.svg';
-import { ReactComponent as Podcast } from '../assets/images/menu.svg';
-
 
 import './Header.scss';
+import DownMenu from '../components/DownMenu';
 
 const NavBorderBox = styled(S.BorderBox)`
   padding: 0 10px;
@@ -28,53 +25,29 @@ const NavBorderBox = styled(S.BorderBox)`
     line-height: 42px;
   }
 `
-const MenuItem = styled.li`
-  display: flex;
-  align-items: center;
-
-  padding: 3px 15px;
-
-  > svg {
-    margin-right: 8px;
-  }
-`
-const DownMenu = styled(S.ShadowBox)`
-  position: absolute;
-  top: 52px;
-  left: 0px;
-
-  width: 200px;
-  border-width: 2px;
-
-  background-color: #fff;
-  transition: opacity .3s ease-in-out;
-
-  ${MenuItem}{
-    border-bottom: 2px solid #000;
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-`
 const NavItme = styled(NavBorderBox)`
   display: flex;
   align-items: center;
 
-  position: relative;
-
-  margin-right: 5px;
+  /* margin-left: 5px; */
   padding-bottom: 2px;
 
   color: ${props => props.$fontColor};
   background-color: ${props => props.$btnColor};
 
-  &:last-child {
+  /* &:last-child {
     margin-right: 0;
-  }
+  } */
+`
+const DownMenuWrap = styled.div`
+  position: relative;
 `
 const NavItemWrap = styled.div`
   display: flex;
+  justify-content: space-between;
+
+  min-width: 430px;
+
 ` 
 const IconLogo = styled(NavBorderBox)`
   width: 50px;
@@ -127,6 +100,21 @@ function Header() {
   const navigate = useNavigate();
   const [isBookmarkNum, setIsBookmarkNum] = useState(0);
   const [isDownMenu, setIsDownMenu] = useState(false);
+  const downMenuRef = useRef();
+
+  const duration = 300;
+
+  useEffect(()=>{
+    const handleOutside = (e) => {
+      if(downMenuRef.current && !downMenuRef.current.contains(e.target)){
+        setIsDownMenu(false);
+      };
+    };
+    document.addEventListener("mousedown", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+    };
+  },[downMenuRef]);
 
   return(
     <>
@@ -146,51 +134,12 @@ function Header() {
             >
               Sponsors
             </NavItme>
-            <NavItme onClick={()=>{
-              // navigate('/explore');
-                setIsDownMenu(!isDownMenu);
-                console.log(isDownMenu,'isDownMenu');
-              }}>
-              Explore <Arrow width='20px' height='20px'/>
-              <Transition
-                in={isDownMenu}
-                timeout={500}
-                onEnter={() => console.log('onEnter')}
-                onEntering={() => console.log('onEntering')}
-                onEntered={() => console.log('onEntered')}
-                onExit={() => console.log('onExit')}
-                onExiting={() => console.log('onExiting')}
-                onExited={() => console.log('onExited')}
-              >
-        {(state) => {
-          const cssClasses = [
-            'Modal',
-            state === 'entering'
-              ? 'ModalOpen'
-              : state === 'exiting'
-              ? 'ModalClosed'
-              : null,
-          ];
-          return (
-            <div className={cssClasses.join(' ')}>
-              <h1>A Modal</h1>
-                Dismiss
-            </div>
-          );
-        }}
-      </Transition>
-              {/* {
-                }
-                isDownMenu ?
-                <DownMenu as="ul">
-                  <MenuItem><Tools width='20px' height='20px'/>Tools</MenuItem>
-                  <MenuItem><Community  width='20px' height='20px'/>Communities</MenuItem>
-                  <MenuItem><Podcast width='20px' height='20px'/>Podcasts</MenuItem>
-                </DownMenu>
-                :
-                null
-              } */}
-            </NavItme>
+            <DownMenuWrap ref={downMenuRef}>
+              <NavItme onClick={()=>{setIsDownMenu(!isDownMenu)}}>
+                  Explore <Arrow width='20px' height='20px'/>
+              </NavItme>
+              <DownMenu show={isDownMenu} showHandle={setIsDownMenu}/>
+            </DownMenuWrap>
             <NavItme onClick={()=>{navigate('/submit')}}>
               <ArrowUp width='20px' height='20px'/>
               Submit

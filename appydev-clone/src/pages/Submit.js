@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import S from '../Styles/GlobalBlock';
 
 import { ReactComponent as Tools } from '../assets/images/menu.svg';
-import { ReactComponent as Community } from '../assets/images/menu.svg';
-import { ReactComponent as Podcast } from '../assets/images/menu.svg';
+import { ReactComponent as Community } from '../assets/images/community.svg';
+import { ReactComponent as Podcast } from '../assets/images/podcast.svg';
+
 
 const Title = styled(S.Title)`
   width: 100%;
@@ -12,19 +13,19 @@ const Title = styled(S.Title)`
   text-align: center;
 `
 const TxtBox = styled.div`
-  line-height: 28px;
+  line-height: 24px;
 `
 const Item = styled(S.ShadowBox)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   
   padding: 20px;
 
   width: calc(100% / 3);
   width: 240px;
-  height: 280px;
+  height: 260px;
 
   text-align: center;
   background-color: #fff;
@@ -38,7 +39,7 @@ const Item = styled(S.ShadowBox)`
   ${Title} {
     margin: 15px 0;
     color: ${({theme}) => theme.colors.darkNavy};
-    font-size: 18px;
+    font-size: 20px;
   };
   &:hover {
     transform: translateY(-7px);

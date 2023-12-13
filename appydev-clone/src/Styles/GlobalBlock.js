@@ -5,6 +5,12 @@ const Title = styled.div`
   font-weight: bold;
   font-family: ${({theme}) => theme.fonts.outfit};
 `
+const MovingUp = styled.div`
+  transition: all .5s;
+  &:hover {
+    transform: translateY(-7px);
+  };
+`
 const BorderBox = styled.div`
   border: 2px solid #000;
   border-bottom-width: 4px;
@@ -21,6 +27,7 @@ const Main = styled.main`
 `
 const S = {
   Title,
+  MovingUp,
   BorderBox,
   ShadowBox,
   Section,
