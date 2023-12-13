@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const List = styled.ul`
   height: 100%;
   `
 const ListItem = styled(S.BorderBox)`
-  font-size: 15px;
+  font-size: 14px;
   border: none;
   border-bottom: 1px solid #ddd;
 
@@ -38,11 +38,11 @@ const ListItem = styled(S.BorderBox)`
   }
 `
 const ToolItem = styled(S.ShadowBox)`
-  
   min-height: 400px;
-  /* margin-bottom: 15px; */
   margin: 0 4px 15px;
   border-bottom-width: 2px;
+
+  background-color: #fff;
 `
 const MovingUp = styled(S.MovingUp)`
   transition: all .3s;
@@ -67,7 +67,6 @@ const Main = styled(S.Main)`
   display: flex;
   justify-content: space-between;
 
-
   max-width: 1000px;
 `
 
@@ -79,7 +78,11 @@ function Tools() {
   const [activeCate, setActiveCate] = useState(3);
   const toolsItmes = useSelector((state) => state.toolsItmes);
   const [toolsItem, setToolsItem] = useState(toolsItmes);
-  const [nowPage, setNowPage] = useState('api');
+  const [nowPage, setNowPage] = useState('');
+
+  useEffect(()=>{
+    console.log('?');
+  },[])
   return(
     <Main>
       <List>
@@ -106,21 +109,21 @@ function Tools() {
         {/* <Routes path="/" element={<Tools />}>
           <Route path="/api" element={<API />} />
         </Routes> */}
-        <S.Title>title</S.Title>
+        <S.Title>{nowPage}</S.Title>
         <ItemWrap>
-            {
-              toolsItem.map((item, index) => {
-                if(item.category === nowPage)
+          {
+            toolsItem.map((item, index) => {
+              if(item.category === nowPage) {
                 return (
-                  <MovingUp>
-                    <ToolItem  key={index}>
+                  <MovingUp key={index}>
+                    <ToolItem className='tool_item'>
                       {item.name}
                     </ToolItem>
                   </MovingUp>
                 )
-              })
-            }
-          
+              }
+            })
+          }
         </ItemWrap>
       </Section>
     </Main>
