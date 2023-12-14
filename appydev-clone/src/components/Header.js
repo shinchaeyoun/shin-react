@@ -10,9 +10,33 @@ import { ReactComponent as Arrow } from "../assets/images/arrow-down.svg";
 import { ReactComponent as ArrowUp } from "../assets/images/arrow-up.svg";
 import { ReactComponent as Bookmark } from "../assets/images/bookmark.svg";
 
+import { ReactComponent as Tools } from '../assets/images/menu.svg';
+import { ReactComponent as Community } from '../assets/images/community.svg';
+import { ReactComponent as Podcast } from '../assets/images/podcast.svg';
+
+
 
 import './Header.scss';
 import DownMenu from '../components/DownMenu';
+
+
+const downMenuInfo = [
+  {
+    name: 'Tools',
+    icon: <Tools width='20px' height='20px'/>,
+    link: '/'
+  },
+  {
+    name: 'Communities',
+    icon: <Community width='20px' height='20px'/>,
+    link: '/communities'
+  },
+  {
+    name: 'Podcasts',
+    icon: <Podcast width='20px' height='20px'/>,
+    link: '/podcasts'
+  },
+]
 
 const NavBorderBox = styled(S.BorderBox)`
   padding: 0 10px;
@@ -138,7 +162,7 @@ function Header() {
               <NavItme onClick={()=>{setIsDownMenu(!isDownMenu)}}>
                   Explore <Arrow width='20px' height='20px'/>
               </NavItme>
-              <DownMenu show={isDownMenu} showHandle={setIsDownMenu}/>
+              <DownMenu header={true} show={isDownMenu} showHandle={setIsDownMenu} info={downMenuInfo} $border={true}/>
             </DownMenuWrap>
             <NavItme onClick={()=>{navigate('/submit')}}>
               <ArrowUp width='20px' height='20px'/>

@@ -31,14 +31,11 @@ function ToolsItemPage({$nowPage, $setItemLength}) {
   const toolsItmes = useSelector((state) => state.toolsItmes);
   const [toolsItem, setToolsItem] = useState(toolsItmes);
   
-  
   function setLength () {
     let arr = [];
     for (let i = 0; i < toolsItem.length; i++) {
       const item = toolsItem[i];
-      if(item.category === $nowPage) {
-        arr.push(item);
-      } else if ($nowPage === '/') {
+      if(item.category === $nowPage || $nowPage === '/') {
         arr.push(item);
       };
     };
@@ -47,17 +44,22 @@ function ToolsItemPage({$nowPage, $setItemLength}) {
   };
   
   useEffect(()=>{
-    
-  },[]);
+    let arr = [];
+    for (let i = 0; i < toolsItem.length; i++) {
+      const item = toolsItem[i];
+      if(item.category === $nowPage || $nowPage === '/') {
+        arr.push(item);
+      };
+    };
+
+    $setItemLength(arr.length);
+  },[$nowPage]);
 
   return(
     <ItemWrap>
       {
         toolsItem.map((item, index) => {
-          if($nowPage === item.category || $nowPage === '/' ){
-            setLength();
-            const tagOrigin = item.tag;
-
+          if($nowPage === item.category || $nowPage === '/'){
             return (
               <MovingUp key={index}>
                 <ToolItem className='tool_item'>
@@ -72,7 +74,6 @@ function ToolsItemPage({$nowPage, $setItemLength}) {
                       {item.name}
                     </S.Title>
                     <div className='explain'>{item.explain}</div>
-
 
                     <div className='bottomBox'>
                       <div className='tag'>

@@ -10,7 +10,43 @@ import './Tools.scss';
 import DownMenu from '../../components/DownMenu';
 import ToolsItemPage from '../components/ToolsItemPage.js'
 
+
 import { ReactComponent as Arrow } from "../../assets/images/arrow-down.svg";
+
+const downMenuInfo = [
+  {
+    name: 'all',
+    link: '/'
+  },
+  {
+    name: 'Free',
+    link: '/'
+  },
+  {
+    name: 'freemium',
+    link: '/'
+  },
+  {
+    name: 'generous free plan',
+    link: '/'
+  },
+  {
+    name: 'open source',
+    link: '/'
+  },
+  {
+    name: 'paid',
+    link: '/'
+  },
+  {
+    name: 'paid with trial',
+    link: '/'
+  },
+  {
+    name: 'practially free',
+    link: '/'
+  },
+]
 
 const DownMenuWrap = styled.div`
   position: relative;
@@ -58,26 +94,36 @@ const Title = styled(S.Title)`
     margin-right: 5px;
   }
 `
-const ToolItem = styled(S.ShadowBox)`
-  min-height: 400px;
-  margin: 0 4px 15px;
-  border-bottom-width: 2px;
+const DownMenuBtn = styled(S.BorderBox)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 15px;
+  height: 48px;
+  line-height: 40px;
 
+  font-family: ${({theme}) => theme.fonts.assistant};
+  text-align: center;
   background-color: #fff;
-`
-const MovingUp = styled(S.MovingUp)`
-  transition: all .3s;
-  &:hover {
-    transform: translateY(-5px);
+
+  > svg {
+    margin-left: 5px;
+  }
+
+  &:active{
+    border-bottom-width: 2px;
+    line-height: 42px;
   }
 `
-const ItemWrap = styled.div`
-  display: grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  flex-wrap: wrap;
+const TitleBox = styled.div`
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-
-  padding: 120px 0;
+  margin-bottom: 10px;
+  height: 48px;
+  ${DownMenuWrap}{
+    text-transform: capitalize;
+  }
 `
 const Section = styled(S.Section)`
   padding: 80px 0px;
@@ -106,7 +152,20 @@ function Tools() {
   const [isDownMenu, setIsDownMenu] = useState(false);
   const downMenuRef = useRef();
 
+  const [isFilter, setIsFilter] = useState('Filter');
   
+  useEffect(()=>{
+    const handleOutside = (e) => {
+      if(downMenuRef.current && !downMenuRef.current.contains(e.target)){
+        setIsDownMenu(false);
+      };
+    };
+    document.addEventListener("mousedown", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+    };
+  },[downMenuRef]);
+
   return(
     <Main>
       <List>
@@ -134,33 +193,48 @@ function Tools() {
       <Section>
         {
           nowPage==='/' ?
-          <div className='allFiter'>
+          <TitleBox>
             <Title>
               <span>
                 All
               </span>
               <span>({itemLength})</span>
             </Title>
-
+              
             <DownMenuWrap ref={downMenuRef}>
-              <S.BorderBox onClick={()=>{setIsDownMenu(!isDownMenu)}}>
-                  filter
-                  <Arrow className={isDownMenu && 'active'} width='20px' height='20px'/>
-              </S.BorderBox>
-              <DownMenu show={isDownMenu} showHandle={setIsDownMenu}/>
+              <DownMenuBtn onClick={()=>{setIsDownMenu(!isDownMenu);}}>
+                  {
+                    isFilter === 'all' ? 'Filter': isFilter
+                  }
+                <Arrow className={isDownMenu ? 'active' : null} width='20px' height='20px'/>
+              </DownMenuBtn>
+              <DownMenu
+                header={false}
+                show={isDownMenu}
+                showHandle={setIsDownMenu}
+                info={downMenuInfo}
+                $top='55px'
+                $left='initial'
+                $right='0px'
+                $border={false}
+                filter={isFilter}
+                filterHandle={setIsFilter}
+                />
             </DownMenuWrap>
-          </div>
+          </TitleBox>
           :
-          <Title>
-            {toolsCategoty[activeCate].icon}
-            <span>
-              {title}
-            </span>
-            <span>(Found {itemLength})</span>
-          </Title>
+          <TitleBox>
+            <Title>
+              {toolsCategoty[activeCate].icon}
+              <span>
+                {title}
+              </span>
+              <span>(Found {itemLength})</span>
+            </Title>
+          </TitleBox>
         }
         
-        <ToolsItemPage $nowPage={nowPage} $itemLength={itemLength} $setItemLength={setItemLength}/>
+        <ToolsItemPage $nowPage={nowPage} $setItemLength={setItemLength}/>
       </Section>
     </Main>
   )

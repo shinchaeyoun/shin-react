@@ -22,7 +22,6 @@ const fonts = {
 const theme = {
   colors,
   fonts,
-
 };
 
 

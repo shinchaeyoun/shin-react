@@ -42,7 +42,7 @@ let categorys = createSlice({
   name: 'categorys',
   name: 'tags',  initialState: [
     {
-      name: 'all',
+      name: 'All',
       link: '/',
       icon: <All width='18px' height='18px'/>
     },
