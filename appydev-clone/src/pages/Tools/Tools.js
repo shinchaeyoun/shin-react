@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 
@@ -7,13 +7,19 @@ import styled from 'styled-components';
 import S from '../../Styles/GlobalBlock.js';
 import './Tools.scss';
 
+import DownMenu from '../../components/DownMenu';
 import ToolsItemPage from '../components/ToolsItemPage.js'
 
+import { ReactComponent as Arrow } from "../../assets/images/arrow-down.svg";
 
+const DownMenuWrap = styled.div`
+  position: relative;
+`
 const List = styled.ul`
   padding: 60px 0;
   height: 100%;
-  `
+  width: 20%;
+`
 const ListItem = styled(S.BorderBox)`
   font-size: 14px;
   border: none;
@@ -81,7 +87,7 @@ const Main = styled(S.Main)`
   display: flex;
   justify-content: space-between;
 
-  max-width: 1000px;
+  max-width: 1024px;
 `
 
 function Tools() {
@@ -96,7 +102,10 @@ function Tools() {
   const [nowPage, setNowPage] = useState('/');
 
   const [itemLength, setItemLength] = useState(toolsItem.length);
-  
+
+  const [isDownMenu, setIsDownMenu] = useState(false);
+  const downMenuRef = useRef();
+
   
   return(
     <Main>
@@ -125,12 +134,22 @@ function Tools() {
       <Section>
         {
           nowPage==='/' ?
-          <Title>
-            <span>
-              All
-            </span>
-            <span>({itemLength})</span>
-          </Title>
+          <div className='allFiter'>
+            <Title>
+              <span>
+                All
+              </span>
+              <span>({itemLength})</span>
+            </Title>
+
+            <DownMenuWrap ref={downMenuRef}>
+              <S.BorderBox onClick={()=>{setIsDownMenu(!isDownMenu)}}>
+                  filter
+                  <Arrow className={isDownMenu && 'active'} width='20px' height='20px'/>
+              </S.BorderBox>
+              <DownMenu show={isDownMenu} showHandle={setIsDownMenu}/>
+            </DownMenuWrap>
+          </div>
           :
           <Title>
             {toolsCategoty[activeCate].icon}

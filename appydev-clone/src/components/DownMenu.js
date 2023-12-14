@@ -51,7 +51,7 @@ const DownMenu = styled(S.ShadowBox)`
   }
 `
 
-const modal = (props,ref) => {
+const downMenu = (props,ref) => {
   const navigate = useNavigate();
 
   return (
@@ -80,4 +80,4 @@ const modal = (props,ref) => {
   );
 };
 
-export default modal;
+export default downMenu;
