@@ -7,7 +7,8 @@ import styled from 'styled-components';
 import S from '../../Styles/GlobalBlock.js';
 import './Tools.scss';
 
-import API from '../components/API.js';
+import ToolsItemPage from '../components/ToolsItemPage.js'
+
 
 const List = styled.ul`
   padding: 60px 0;
@@ -37,6 +38,20 @@ const ListItem = styled(S.BorderBox)`
     }
   }
 `
+const Title = styled(S.Title)`
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #2d3748;
+
+  > svg {
+    width: 26px; height: 26px;
+  }
+
+  > * {
+    margin-right: 5px;
+  }
+`
 const ToolItem = styled(S.ShadowBox)`
   min-height: 400px;
   margin: 0 4px 15px;
@@ -59,9 +74,8 @@ const ItemWrap = styled.div`
   padding: 120px 0;
 `
 const Section = styled(S.Section)`
-  padding: 16px;
+  padding: 80px 0px;
   width: 80%;
-  background-color: #d4e4eb;
 `
 const Main = styled(S.Main)`
   display: flex;
@@ -75,14 +89,15 @@ function Tools() {
   const toolsCategotys = useSelector((state) => state.categorys);
   const [toolsCategoty, setToolsCategoty] = useState(toolsCategotys);
 
-  const [activeCate, setActiveCate] = useState(3);
+  const [activeCate, setActiveCate] = useState(0);
   const toolsItmes = useSelector((state) => state.toolsItmes);
   const [toolsItem, setToolsItem] = useState(toolsItmes);
-  const [nowPage, setNowPage] = useState('');
+  const [title, setTitle] = useState('');
+  const [nowPage, setNowPage] = useState('/');
 
-  useEffect(()=>{
-    console.log('?');
-  },[])
+  const [itemLength, setItemLength] = useState(toolsItem.length);
+  
+  
   return(
     <Main>
       <List>
@@ -92,7 +107,9 @@ function Tools() {
               <ListItem as='li' key={index}
                 onClick={()=>{
                   navigate(item.link);
-                  setNowPage(item.link)
+                  setActiveCate(index);
+                  setNowPage(item.link);
+                  setTitle(item.name);
                 }}
               >
                 <div className={activeCate == index ? 'active':null}>
@@ -106,25 +123,25 @@ function Tools() {
       </List>
 
       <Section>
-        {/* <Routes path="/" element={<Tools />}>
-          <Route path="/api" element={<API />} />
-        </Routes> */}
-        <S.Title>{nowPage}</S.Title>
-        <ItemWrap>
-          {
-            toolsItem.map((item, index) => {
-              if(item.category === nowPage) {
-                return (
-                  <MovingUp key={index}>
-                    <ToolItem className='tool_item'>
-                      {item.name}
-                    </ToolItem>
-                  </MovingUp>
-                )
-              }
-            })
-          }
-        </ItemWrap>
+        {
+          nowPage==='/' ?
+          <Title>
+            <span>
+              All
+            </span>
+            <span>({itemLength})</span>
+          </Title>
+          :
+          <Title>
+            {toolsCategoty[activeCate].icon}
+            <span>
+              {title}
+            </span>
+            <span>(Found {itemLength})</span>
+          </Title>
+        }
+        
+        <ToolsItemPage $nowPage={nowPage} $itemLength={itemLength} $setItemLength={setItemLength}/>
       </Section>
     </Main>
   )
