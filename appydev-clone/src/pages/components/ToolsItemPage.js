@@ -27,14 +27,13 @@ const ItemWrap = styled.div`
   padding: 20px 0;
 `
 
-function ToolsItemPage({$nowPage, $setItemLength}) {
-  const toolsItmes = useSelector((state) => state.toolsItmes);
-  const [toolsItem, setToolsItem] = useState(toolsItmes);
+function ToolsItemPage({ mapContent ,$nowPage, $setItemLength, $filter}) {
+  
   
   function setLength () {
     let arr = [];
-    for (let i = 0; i < toolsItem.length; i++) {
-      const item = toolsItem[i];
+    for (let i = 0; i < mapContent.length; i++) {
+      const item = mapContent[i];
       if(item.category === $nowPage || $nowPage === '/') {
         arr.push(item);
       };
@@ -45,8 +44,8 @@ function ToolsItemPage({$nowPage, $setItemLength}) {
   
   useEffect(()=>{
     let arr = [];
-    for (let i = 0; i < toolsItem.length; i++) {
-      const item = toolsItem[i];
+    for (let i = 0; i < mapContent.length; i++) {
+      const item = mapContent[i];
       if(item.category === $nowPage || $nowPage === '/') {
         arr.push(item);
       };
@@ -55,10 +54,12 @@ function ToolsItemPage({$nowPage, $setItemLength}) {
     $setItemLength(arr.length);
   },[$nowPage]);
 
+  // const result = toolsItem.filter((toolsItem) => toolsItem.option == 'freemium')
+
   return(
     <ItemWrap>
       {
-        toolsItem.map((item, index) => {
+        mapContent.map((item, index) => {
           if($nowPage === item.category || $nowPage === '/'){
             return (
               <MovingUp key={index}>

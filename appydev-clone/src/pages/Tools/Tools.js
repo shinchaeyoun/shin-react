@@ -138,21 +138,25 @@ const Main = styled(S.Main)`
 
 function Tools() {
   const navigate = useNavigate();
+  const [isDownMenu, setIsDownMenu] = useState(false);
+  const [isFilter, setIsFilter] = useState('Filter');
   const toolsCategotys = useSelector((state) => state.categorys);
   const [toolsCategoty, setToolsCategoty] = useState(toolsCategotys);
 
-  const [activeCate, setActiveCate] = useState(0);
+  // const toolsItmes = useSelector((state) => state.toolsItmes);
+  // const [toolsItem, setToolsItem] = useState(toolsItmes);
+
   const toolsItmes = useSelector((state) => state.toolsItmes);
   const [toolsItem, setToolsItem] = useState(toolsItmes);
+  const filterContent = toolsItem.filter((toolsItem) => toolsItem.option == isFilter);
+  const [activeCate, setActiveCate] = useState(0);
   const [title, setTitle] = useState('');
   const [nowPage, setNowPage] = useState('/');
 
   const [itemLength, setItemLength] = useState(toolsItem.length);
 
-  const [isDownMenu, setIsDownMenu] = useState(false);
   const downMenuRef = useRef();
 
-  const [isFilter, setIsFilter] = useState('Filter');
   
   useEffect(()=>{
     const handleOutside = (e) => {
@@ -193,48 +197,55 @@ function Tools() {
       <Section>
         {
           nowPage==='/' ?
-          <TitleBox>
-            <Title>
-              <span>
-                All
-              </span>
-              <span>({itemLength})</span>
-            </Title>
-              
-            <DownMenuWrap ref={downMenuRef}>
-              <DownMenuBtn onClick={()=>{setIsDownMenu(!isDownMenu);}}>
+          <>
+            <TitleBox>
+              <Title>
+                <span>
+                  All
+                </span>
+                <span>({itemLength})</span>
+              </Title>
+                
+              <DownMenuWrap ref={downMenuRef}>
+                <DownMenuBtn onClick={()=>{setIsDownMenu(!isDownMenu);}}>
                   {
                     isFilter === 'all' ? 'Filter': isFilter
                   }
-                <Arrow className={isDownMenu ? 'active' : null} width='20px' height='20px'/>
-              </DownMenuBtn>
-              <DownMenu
-                header={false}
-                show={isDownMenu}
-                showHandle={setIsDownMenu}
-                info={downMenuInfo}
-                $top='55px'
-                $left='initial'
-                $right='0px'
-                $border={false}
-                filter={isFilter}
-                filterHandle={setIsFilter}
-                />
-            </DownMenuWrap>
-          </TitleBox>
+                  <Arrow className={isDownMenu ? 'active' : null} width='20px' height='20px'/>
+                </DownMenuBtn>
+                <DownMenu
+                  header={false}
+                  show={isDownMenu}
+                  showHandle={setIsDownMenu}
+                  info={downMenuInfo}
+                  $top='55px'
+                  $left='initial'
+                  $right='0px'
+                  $border={false}
+                  filter={isFilter}
+                  filterHandle={setIsFilter}
+                  />
+              </DownMenuWrap>
+            </TitleBox>
+          </>
           :
-          <TitleBox>
-            <Title>
-              {toolsCategoty[activeCate].icon}
-              <span>
-                {title}
-              </span>
-              <span>(Found {itemLength})</span>
-            </Title>
-          </TitleBox>
+          <>
+            <TitleBox>
+              <Title>
+                {toolsCategoty[activeCate].icon}
+                <span>
+                  {title}
+                </span>
+                <span>(Found {itemLength})</span>
+              </Title>
+            </TitleBox>
+            
+          </>
         }
         
-        <ToolsItemPage $nowPage={nowPage} $setItemLength={setItemLength}/>
+        <ToolsItemPage mapContent={toolsItem} $nowPage={nowPage} $setItemLength={setItemLength}/>
+        <ToolsItemPage mapContent={filterContent} $nowPage={nowPage} $setItemLength={setItemLength}/>
+        
       </Section>
     </Main>
   )
