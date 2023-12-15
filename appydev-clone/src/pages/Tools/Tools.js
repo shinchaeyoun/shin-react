@@ -19,7 +19,7 @@ const downMenuInfo = [
     link: '/'
   },
   {
-    name: 'Free',
+    name: 'free',
     link: '/'
   },
   {
@@ -140,24 +140,22 @@ function Tools() {
   const navigate = useNavigate();
   const [isDownMenu, setIsDownMenu] = useState(false);
   const [isFilter, setIsFilter] = useState('Filter');
-  const toolsCategotys = useSelector((state) => state.categorys);
-  const [toolsCategoty, setToolsCategoty] = useState(toolsCategotys);
-
-  // const toolsItmes = useSelector((state) => state.toolsItmes);
-  // const [toolsItem, setToolsItem] = useState(toolsItmes);
-
-  const toolsItmes = useSelector((state) => state.toolsItmes);
-  const [toolsItem, setToolsItem] = useState(toolsItmes);
-  const filterContent = toolsItem.filter((toolsItem) => toolsItem.option == isFilter);
+  
   const [activeCate, setActiveCate] = useState(0);
   const [title, setTitle] = useState('');
   const [nowPage, setNowPage] = useState('/');
-
+  
+  
+  const downMenuRef = useRef();
+  
+  const toolsCategotys = useSelector((state) => state.categorys);
+  const [toolsCategoty, setToolsCategoty] = useState(toolsCategotys);
+  const toolsItmes = useSelector((state) => state.toolsItmes);
+  const [toolsItem, setToolsItem] = useState(toolsItmes);
   const [itemLength, setItemLength] = useState(toolsItem.length);
 
-  const downMenuRef = useRef();
+  const [filterContent, setFilterContent] = useState(toolsItem);
 
-  
   useEffect(()=>{
     const handleOutside = (e) => {
       if(downMenuRef.current && !downMenuRef.current.contains(e.target)){
@@ -197,6 +195,7 @@ function Tools() {
       <Section>
         {
           nowPage==='/' ?
+          // 다른 카테고리에서 all 으로 넘어왔을 때 필터 초기화
           <>
             <TitleBox>
               <Title>
@@ -224,9 +223,14 @@ function Tools() {
                   $border={false}
                   filter={isFilter}
                   filterHandle={setIsFilter}
-                  />
+                />
               </DownMenuWrap>
             </TitleBox>
+
+            <ToolsItemPage
+            mapContent={filterContent}
+            $nowPage={isFilter}
+            $setItemLength={setItemLength}/>
           </>
           :
           <>
@@ -240,12 +244,12 @@ function Tools() {
               </Title>
             </TitleBox>
             
+            <ToolsItemPage
+            mapContent={toolsItem}
+            $nowPage={nowPage}
+            $setItemLength={setItemLength}/>
           </>
         }
-        
-        <ToolsItemPage mapContent={toolsItem} $nowPage={nowPage} $setItemLength={setItemLength}/>
-        <ToolsItemPage mapContent={filterContent} $nowPage={nowPage} $setItemLength={setItemLength}/>
-        
       </Section>
     </Main>
   )
