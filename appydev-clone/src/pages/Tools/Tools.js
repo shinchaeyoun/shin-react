@@ -137,24 +137,19 @@ const Main = styled(S.Main)`
 `
 
 function Tools() {
+  // 순서 정리하기
   const navigate = useNavigate();
   const [isDownMenu, setIsDownMenu] = useState(false);
-  const [isFilter, setIsFilter] = useState('Filter');
-  
+  const [isFilter, setIsFilter] = useState('all');
   const [activeCate, setActiveCate] = useState(0);
   const [title, setTitle] = useState('');
   const [nowPage, setNowPage] = useState('/');
-  
-  
   const downMenuRef = useRef();
-  
   const toolsCategotys = useSelector((state) => state.categorys);
   const [toolsCategoty, setToolsCategoty] = useState(toolsCategotys);
   const toolsItmes = useSelector((state) => state.toolsItmes);
   const [toolsItem, setToolsItem] = useState(toolsItmes);
   const [itemLength, setItemLength] = useState(toolsItem.length);
-
-  const [filterContent, setFilterContent] = useState(toolsItem);
 
   useEffect(()=>{
     const handleOutside = (e) => {
@@ -180,6 +175,7 @@ function Tools() {
                   setActiveCate(index);
                   setNowPage(item.link);
                   setTitle(item.name);
+                  index === 0 && setIsFilter('all'); // filter reset
                 }}
               >
                 <div className={activeCate == index ? 'active':null}>
@@ -195,7 +191,6 @@ function Tools() {
       <Section>
         {
           nowPage==='/' ?
-          // 다른 카테고리에서 all 으로 넘어왔을 때 필터 초기화
           <>
             <TitleBox>
               <Title>
@@ -228,7 +223,7 @@ function Tools() {
             </TitleBox>
 
             <ToolsItemPage
-            mapContent={filterContent}
+            mapContent={toolsItem}
             $nowPage={isFilter}
             $setItemLength={setItemLength}/>
           </>

@@ -47,7 +47,7 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
           // all 이라는 옵션을 가지고 있는 아이템이 없어서.. 모든 아이템에 all 이라는 옵션을 넣어주거나, 모든 아이템을 선택할 수 있는 코드를 만들어야함. 
           // ItemPage 라던가 새 컴포넌트 만들어서 tools, commuitis, potcast 모든 페이지 돌리는 건 디자인이 달라서 안돼려나.
           // 페이지마다 디자인을 설정한다면?
-          
+          // 뭘 수정했는지 모르겟는데 일단 되는 중
           if($nowPage === item.category || $nowPage === item.option || $nowPage === '/' || $nowPage === 'all'){
             return (
               <MovingUp key={index}>
