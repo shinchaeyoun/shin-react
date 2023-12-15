@@ -223,7 +223,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'free'
+      option: 'free',
+      bookmark: true,
+
     },
     {
       name: 'LinkPreview',
@@ -233,7 +235,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'freemium'
+      option: 'freemium',
+      bookmark: false,
+
     },
     {
       name: '3',
@@ -243,7 +247,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'generous free plan'
+      option: 'generous free plan',
+      bookmark: false,
+
     },
     {
       name: '4',
@@ -253,7 +259,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'open source'
+      option: 'open source',
+      bookmark: false,
+
     },
     {
       name: '5',
@@ -263,7 +271,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'paid'
+      option: 'paid',
+      bookmark: false,
+
     },
     {
       name: '6',
@@ -273,7 +283,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'paid with trial'
+      option: 'paid with trial',
+      bookmark: false,
+
     },
     {
       name: 'browser-extensions',
@@ -283,7 +295,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
-      option: 'practially free'
+      option: 'practially free',
+      bookmark: false,
+
     },
     {
       name: 'css-frameworks',
@@ -293,7 +307,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'career',
@@ -303,7 +319,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'cheatsheets',
@@ -313,7 +331,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/cheatsheets',
       tag: 'cheatsheets',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'code-automation',
@@ -323,7 +343,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'content-and-writing',
@@ -333,7 +355,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-mockup',
@@ -343,7 +367,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-resources',
@@ -353,7 +379,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -363,7 +391,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-productivity',
@@ -373,7 +403,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-resources',
@@ -383,7 +415,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-tools',
@@ -393,7 +427,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'education',
@@ -403,7 +439,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-builders',
@@ -413,7 +451,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-tools',
@@ -423,7 +463,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'entertainment',
@@ -433,7 +475,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'freebies',
@@ -443,7 +487,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'icons',
@@ -453,7 +499,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'illustrations',
@@ -463,7 +511,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'js-plugins',
@@ -473,7 +523,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'loaders-and-spinners',
@@ -483,7 +535,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'marketing-resources',
@@ -493,7 +547,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'misc',
@@ -503,7 +559,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'nocode',
@@ -513,7 +571,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -523,7 +583,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'seo',
@@ -533,7 +595,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'stock-assets',
@@ -543,7 +607,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'wireframe',
@@ -553,7 +619,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -563,7 +631,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'editors-choice',
@@ -573,7 +643,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'api',
@@ -583,7 +655,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'browser-extensions',
@@ -593,7 +667,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'css-frameworks',
@@ -603,7 +679,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'career',
@@ -613,7 +691,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'charts',
@@ -623,7 +703,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/charts',
       tag: 'charts',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'code-automation',
@@ -633,7 +715,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'content-and-writing',
@@ -643,7 +727,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-mockup',
@@ -653,7 +739,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-resources',
@@ -663,7 +751,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -673,7 +763,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-productivity',
@@ -683,7 +775,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-resources',
@@ -693,7 +787,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-tools',
@@ -703,7 +799,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'education',
@@ -713,7 +811,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-builders',
@@ -723,7 +823,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-tools',
@@ -733,7 +835,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'entertainment',
@@ -743,7 +847,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'freebies',
@@ -753,7 +859,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'icons',
@@ -763,7 +871,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'illustrations',
@@ -773,7 +883,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'js-plugins',
@@ -783,7 +895,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'loaders-and-spinners',
@@ -793,7 +907,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'marketing-resources',
@@ -803,7 +919,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'misc',
@@ -813,7 +931,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'nocode',
@@ -823,7 +943,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -833,7 +955,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'seo',
@@ -843,7 +967,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'stock-assets',
@@ -853,7 +979,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'wireframe',
@@ -863,7 +991,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -873,7 +1003,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'editors-choice',
@@ -883,7 +1015,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'api',
@@ -893,7 +1027,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'browser-extensions',
@@ -903,7 +1039,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'css-frameworks',
@@ -913,7 +1051,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'career',
@@ -923,7 +1063,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'charts',
@@ -933,7 +1075,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/charts',
       tag: 'charts',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'code-automation',
@@ -943,7 +1087,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'content-and-writing',
@@ -953,7 +1099,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-mockup',
@@ -963,7 +1111,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-resources',
@@ -973,7 +1123,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -983,7 +1135,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-productivity',
@@ -993,7 +1147,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-resources',
@@ -1003,7 +1159,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-tools',
@@ -1013,7 +1171,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'education',
@@ -1023,7 +1183,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-builders',
@@ -1033,7 +1195,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-tools',
@@ -1043,7 +1207,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'entertainment',
@@ -1053,7 +1219,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'freebies',
@@ -1063,7 +1231,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'icons',
@@ -1073,7 +1243,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'illustrations',
@@ -1083,7 +1255,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'js-plugins',
@@ -1093,7 +1267,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'loaders-and-spinners',
@@ -1103,7 +1279,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'marketing-resources',
@@ -1113,7 +1291,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'misc',
@@ -1123,7 +1303,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'nocode',
@@ -1133,7 +1315,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -1143,7 +1327,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'seo',
@@ -1153,7 +1339,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'stock-assets',
@@ -1163,7 +1351,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'wireframe',
@@ -1173,7 +1363,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -1183,7 +1375,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'editors-choice',
@@ -1193,7 +1387,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'api',
@@ -1203,7 +1399,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'browser-extensions',
@@ -1213,7 +1411,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'css-frameworks',
@@ -1223,7 +1423,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'career',
@@ -1233,7 +1435,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'charts',
@@ -1243,7 +1447,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/charts',
       tag: 'charts',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'code-automation',
@@ -1253,7 +1459,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'content-and-writing',
@@ -1263,7 +1471,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-mockup',
@@ -1273,7 +1483,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-resources',
@@ -1283,7 +1495,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -1293,7 +1507,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-productivity',
@@ -1303,7 +1519,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-resources',
@@ -1313,7 +1531,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-tools',
@@ -1323,7 +1543,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'education',
@@ -1333,7 +1555,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-builders',
@@ -1343,7 +1567,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-tools',
@@ -1353,7 +1579,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'entertainment',
@@ -1363,7 +1591,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'freebies',
@@ -1373,7 +1603,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'icons',
@@ -1383,7 +1615,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'illustrations',
@@ -1393,7 +1627,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'js-plugins',
@@ -1403,7 +1639,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'loaders-and-spinners',
@@ -1413,7 +1651,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'marketing-resources',
@@ -1423,7 +1663,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'stock-assets',
@@ -1433,7 +1675,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'wireframe',
@@ -1443,7 +1687,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -1453,7 +1699,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'editors-choice',
@@ -1463,7 +1711,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'api',
@@ -1473,7 +1723,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'content-and-writing',
@@ -1483,7 +1735,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-mockup',
@@ -1493,7 +1747,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-resources',
@@ -1503,7 +1759,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -1513,7 +1771,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -1523,7 +1783,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -1533,7 +1795,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -1543,7 +1807,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'design-tools',
@@ -1553,7 +1819,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-productivity',
@@ -1563,7 +1831,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-resources',
@@ -1573,7 +1843,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'developer-tools',
@@ -1583,7 +1855,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'education',
@@ -1593,7 +1867,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-builders',
@@ -1603,7 +1879,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'email-tools',
@@ -1613,7 +1891,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'entertainment',
@@ -1623,7 +1903,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'freebies',
@@ -1633,7 +1915,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'icons',
@@ -1643,7 +1927,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'illustrations',
@@ -1653,7 +1939,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'js-plugins',
@@ -1663,7 +1951,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'loaders-and-spinners',
@@ -1673,7 +1963,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'marketing-resources',
@@ -1683,7 +1975,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'misc',
@@ -1693,7 +1987,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'nocode',
@@ -1703,7 +1999,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -1713,7 +2011,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'seo',
@@ -1723,7 +2023,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'stock-assets',
@@ -1733,7 +2035,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'wireframe',
@@ -1743,7 +2047,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'productivity',
@@ -1753,7 +2059,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
     {
       name: 'editors-choice',
@@ -1763,7 +2071,9 @@ let toolsItmes = createSlice({
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
-      option: 'free'
+      option: 'free',
+      bookmark: false,
+
     },
   ]
 })
