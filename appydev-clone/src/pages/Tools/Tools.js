@@ -3,9 +3,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 
+import filterData from './ToolsData.js';
+
 import styled from 'styled-components';
 import S from '../../Styles/GlobalBlock.js';
 import './Tools.scss';
+
 
 import DownMenu from '../../components/DownMenu';
 import ToolsItemPage from '../components/ToolsItemPage.js'
@@ -13,40 +16,7 @@ import ToolsItemPage from '../components/ToolsItemPage.js'
 
 import { ReactComponent as Arrow } from "../../assets/images/arrow-down.svg";
 
-const downMenuInfo = [
-  {
-    name: 'all',
-    link: '/'
-  },
-  {
-    name: 'free',
-    link: '/'
-  },
-  {
-    name: 'freemium',
-    link: '/'
-  },
-  {
-    name: 'generous free plan',
-    link: '/'
-  },
-  {
-    name: 'open source',
-    link: '/'
-  },
-  {
-    name: 'paid',
-    link: '/'
-  },
-  {
-    name: 'paid with trial',
-    link: '/'
-  },
-  {
-    name: 'practially free',
-    link: '/'
-  },
-]
+
 
 const DownMenuWrap = styled.div`
   position: relative;
@@ -211,7 +181,7 @@ function Tools() {
                   header={false}
                   show={isDownMenu}
                   showHandle={setIsDownMenu}
-                  info={downMenuInfo}
+                  info={filterData}
                   $top='55px'
                   $left='initial'
                   $right='0px'

@@ -1,11 +1,12 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setBookmark } from '../../store';
 
 import styled, { keyframes } from 'styled-components';
 import S from '../../Styles/GlobalBlock.js';
-import Transition, { CSSTransition } from 'react-transition-group';
-
+import { CSSTransition } from 'react-transition-group';
 
 import { ReactComponent as Add } from "../../assets/images/tools-item/add-circle.svg";
 import { ReactComponent as Check } from "../../assets/images/tools-item/check-circle.svg";
@@ -16,7 +17,6 @@ const animationTiming = {
   enter: 200,
   exit: 200,
 };
-
 const openHover = keyframes`
   0% {
     opacity: 0;
@@ -37,7 +37,6 @@ const closeMenu = keyframes`
     transform: scale(0.98);
   }
 `
-
 const Bookmark = styled.div`
   display: flex;
   align-items: center;
@@ -100,18 +99,39 @@ const ItemWrap = styled.div`
 `
 
 function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
-  const [isHover, setIsHover] = useState(true);
+  const dispatch = useDispatch();
+  const [isHover, setIsHover] = useState(false);
+  const [isBookmark, setIsBookmark] = useState(false);
+  const [hoverIdx, setHoverIdx] = useState('');
+  
+  const toolsItmes = useSelector((state) => state.toolsItmes);
+  const [toolsItem, setToolsItem] = useState(toolsItmes);
 
-  const handleMouseOver = () => {
-    setIsHover(true)
-  }
+  const handleMouseOver = (index) => {
+    setIsHover(true);
+    setHoverIdx(index);
+  };
+
   const handleMouseOut = () => {
-    setIsHover(false)
-  }
+    setIsHover(false);
+    setHoverIdx('');
+  };
+
+  const bookmarkFn = (index) => {
+    console.log('클릭마다 실행?');
+    setIsBookmark(!isBookmark);
+    dispatch(setBookmark([index, isBookmark]));
+  };
+
+  useEffect(()=>{
+    // isBookmark가 수정될 때 마다 실행되는 useEffect
+    console.log(isBookmark,'isBookmark changing');
+  }, [isBookmark]);
+
   useEffect(()=>{
     let arr = [];
-    for (let i = 0; i < mapContent.length; i++) {
-      const item = mapContent[i];
+    for (let i = 0; i < toolsItmes.length; i++) {
+      const item = toolsItmes[i];
       if(item.category === $nowPage || $nowPage === item.option || $nowPage === '/' || $nowPage === 'all') {
         arr.push(item);
       };
@@ -123,18 +143,17 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
   return(
     <ItemWrap>
       {
-        mapContent.map((item, index) => {
-          // all 이라는 옵션을 가지고 있는 아이템이 없어서.. 모든 아이템에 all 이라는 옵션을 넣어주거나, 모든 아이템을 선택할 수 있는 코드를 만들어야함. 
-          // ItemPage 라던가 새 컴포넌트 만들어서 tools, commuitis, potcast 모든 페이지 돌리는 건 디자인이 달라서 안돼려나.
-          // 페이지마다 디자인을 설정한다면?
-          // 뭘 수정했는지 모르겟는데 일단 되는 중
+        toolsItmes.map((item, index) => {
           if($nowPage === item.category || $nowPage === item.option || $nowPage === '/' || $nowPage === 'all'){
+
             return (
               <MovingUp key={index}
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
+                onMouseOver={()=>{handleMouseOver(index)}}
+                onMouseOut={()=>{handleMouseOut}}
               >
                 <ToolItem className='tool_item'>
+                  {
+                    index === hoverIdx &&
                   
                   <CSSTransition
                     in={isHover}
@@ -142,24 +161,30 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
                     mountOnEnter
                     unmountOnExit
                   >
-                    <HoverBox>
-                      {
-                        item.bookmark ?
+                      <HoverBox onClick={()=>{
+                        bookmarkFn(index);
+                      }}>
                         <Bookmark className='fade-slide'>
-                          <Check width='15px' height='15px'/>
-                          <p>bookmarked</p>
+                        {
+                          item.bookmark ?
+                          <>
+                            <Check width='15px' height='15px'/>
+                            <p>bookmarked</p>
+                          </>
+                          :
+                          <>
+                            <Add width='15px' height='15px'/>
+                            <p>bookmark</p>
+                          </>
+                        }
                         </Bookmark>
-                        :
-                        <Bookmark className='fade-slide'>
-                          <Add width='15px' height='15px'/>
-                          <p>bookmark</p>
-                        </Bookmark>
-                      }
-                      <ToLink className='fade-slide'>
-                        <Link width='12px' height='12px'/>
-                      </ToLink>
-                    </HoverBox>
+                            
+                        <ToLink className='fade-slide'>
+                          <Link width='12px' height='12px'/>
+                        </ToLink>
+                      </HoverBox>
                   </CSSTransition>
+                    }
                   {/* {
                     isHover &&
                     <HoverBox>

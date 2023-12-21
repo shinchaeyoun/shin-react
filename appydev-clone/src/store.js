@@ -1,7 +1,7 @@
 /* eslint-disable */
 import {
   configureStore,
-  createSlice
+  createSlice,
 } from '@reduxjs/toolkit';
 
 import { ReactComponent as All } from './assets/images/tools-item/alltools.svg'
@@ -24,7 +24,7 @@ import { ReactComponent as EmailBuilders } from './assets/images/tools-item/emai
 import { ReactComponent as EmailTools } from './assets/images/tools-item/email-tools.svg'
 import { ReactComponent as Entertainment } from './assets/images/tools-item/entertainment.svg'
 import { ReactComponent as Freebies } from './assets/images/tools-item/freebies.svg'
-import { ReactComponent as Icons } from './assets/images/tools-item/icons.svg'
+// import { ReactComponent as Icons } from './assets/images/tools-item/icons.svg'
 import { ReactComponent as Illustrations } from './assets/images/tools-item/illustrations.svg'
 import { ReactComponent as JsPlugins } from './assets/images/tools-item/js-plugins.svg'
 import { ReactComponent as LoadersNspinners } from './assets/images/tools-item/loaders-and-spinners.svg'
@@ -38,178 +38,183 @@ import { ReactComponent as Wireframe } from './assets/images/tools-item/wirefram
 
 import img from './assets/images/tools-item/image.png'
 
+const iconVal = (Val) => {
+  return <Val width='18px' height='18px'/>
+};
+
 let categorys = createSlice({
   name: 'categorys',
-  name: 'tags',  initialState: [
+  initialState: [
     {
       name: 'All',
       link: '/',
-      icon: <All width='18px' height='18px'/>
+      // icon: iconVal(All)
     },
     {
       name: 'API',
       link: '/api',
-      icon: <Api width='18px' height='18px'/>
+      // icon: iconVal(Api)
     },
     {
       name: 'Browser Extensions',
       link: '/browser-extensions',
       icon: <BrowserExtensions width='18px' height='18px'/>
+      // icon: iconVal(BrowserExtensions),
     },
     {
       name: 'CSS Frameworks',
       link: '/css-frameworks',
-      icon: <Career width='18px' height='18px'/>
+      // icon: <Career width='18px' height='18px'/>
     },
     {
       name: 'Career',
       link: '/career',
-      icon: <Charts width='18px' height='18px'/>
+      // icon: <Charts width='18px' height='18px'/>
     },
     {
       name: 'Charts',
       link: '/charts',
-      icon: <Cheatsheets width='18px' height='18px'/>
+      // icon: <Cheatsheets width='18px' height='18px'/>
     },
     {
       name: 'Cheatsheets',
       link: '/cheatsheets',
-      icon: <CodeAutomation width='18px' height='18px'/>
+      // icon: <CodeAutomation width='18px' height='18px'/>
     },
     {
       name: 'Code Automation',
       link: '/code-automation',
-      icon: <ContentNwriting width='18px' height='18px'/>
+      // icon: <ContentNwriting width='18px' height='18px'/>
     },
     {
       name: 'Content & Writing',
       link: '/content-and-writing',
-      icon: <CssFrameworks width='18px' height='18px'/>
+      // icon: <CssFrameworks width='18px' height='18px'/>
     },
     {
       name: 'Design Mockup',
       link: '/design-mockup',
-      icon: <DesignMockup width='18px' height='18px'/>
+      // icon: <DesignMockup width='18px' height='18px'/>
     },
     {
       name: 'Design Resources',
       link: '/design-resources',
-      icon: <DesignResources width='18px' height='18px'/>
+      // icon: <DesignResources width='18px' height='18px'/>
     },
     {
       name: 'Design Tools',
       link: '/design-tools',
-      icon: <DesignTools width='18px' height='18px'/>
+      // icon: <DesignTools width='18px' height='18px'/>
     },
     {
       name: 'Developer Productivity',
       link: '/developer-productivity',
-      icon: <DeveloperProductivity width='18px' height='18px'/>
+      // icon: <DeveloperProductivity width='18px' height='18px'/>
     },
     {
       name: 'Developer Resources',
       link: '/developer-resources',
-      icon: <DeveloperResources width='18px' height='18px'/>
+      // icon: <DeveloperResources width='18px' height='18px'/>
     },
     {
       name: 'Developer Tools',
       link: '/developer-tools',
-      icon: <DeveloperTools width='18px' height='18px'/>
+      // icon: <DeveloperTools width='18px' height='18px'/>
     },
     {
       name: 'Education',
       link: '/education',
-      icon: <Education width='18px' height='18px'/>
+      // icon: <Education width='18px' height='18px'/>
     },
     {
       name: 'Email Builders',
       link: '/email-builders',
-      icon: <EmailBuilders width='18px' height='18px'/>
+      // icon: <EmailBuilders width='18px' height='18px'/>
     },
     {
       name: 'Email Tools',
       link: '/email-tools',
-      icon: <EmailTools width='18px' height='18px'/>
+      // icon: <EmailTools width='18px' height='18px'/>
     },
     {
       name: 'Entertainment',
       link: '/entertainment',
-      icon: <Entertainment width='18px' height='18px'/>
+      // icon: <Entertainment width='18px' height='18px'/>
     },
     {
       name: 'Freebies',
       link: '/freebies',
-      icon: <Freebies width='18px' height='18px'/>
+      // icon: <Freebies width='18px' height='18px'/>
     },
     {
-      name: 'Icons',
-      link: '/icons',
-      icon: <Icons width='18px' height='18px'/>
+      // name: 'Icons',
+      // link: '/icons',
+      // // icon: <Icons width='18px' height='18px'/>
     },
     {
       name: 'Illustrations',
       link: '/illustrations',
-      icon: <Illustrations width='18px' height='18px'/>
+      // icon: <Illustrations width='18px' height='18px'/>
     },
     {
       name: 'JS Plugins',
       link: '/js-plugins',
-      icon: <JsPlugins width='18px' height='18px'/>
+      // icon: <JsPlugins width='18px' height='18px'/>
     },
     {
       name: 'Loaders & Spinners',
       link: '/loaders-and-spinners',
-      icon: <LoadersNspinners width='18px' height='18px'/>
+      // icon: <LoadersNspinners width='18px' height='18px'/>
     },
     {
       name: 'Marketing Resources',
       link: '/marketing-resources',
-      icon: <MarketingResources width='18px' height='18px'/>
+      // icon: <MarketingResources width='18px' height='18px'/>
     },
     {
       name: 'Misc',
       link: '/misc',
-      icon: <Misc width='18px' height='18px'/>
+      // icon: <Misc width='18px' height='18px'/>
     },
     {
       name: 'Nocode',
       link: '/nocode',
-      icon: <Nocode width='18px' height='18px'/>
+      // icon: <Nocode width='18px' height='18px'/>
     },
     {
       name: 'Productivity',
       link: '/productivity',
-      icon: <Productivity width='18px' height='18px'/>
+      // icon: <Productivity width='18px' height='18px'/>
     },
     {
       name: 'SEO',
       link: '/seo',
-      icon: <Seo width='18px' height='18px'/>
+      // icon: <Seo width='18px' height='18px'/>
     },
     {
       name: 'Stock Assets',
       link: '/stock-assets',
-      icon: <StockAssets width='18px' height='18px'/>
+      // icon: <StockAssets width='18px' height='18px'/>
     },
     {
       name: 'Wireframe',
       link: '/wireframe',
-      icon: <Wireframe width='18px' height='18px'/>
+      // icon: <Wireframe width='18px' height='18px'/>
     },
     {
       name: 'productivity',
       link: '/productivity',
-      icon: <Productivity width='18px' height='18px'/>
+      // icon: <Productivity width='18px' height='18px'/>
     },
     {
       name: 'Editors Choice',
       link: '/editors-choice',
-      icon: <span>🔥</span>
+      // icon: <span>🔥</span>
     },
   ],
-  reducers: {
+  // reducers: {
     
-  }
+  // }
 });
 
 let toolsItmes = createSlice({
@@ -218,8 +223,8 @@ let toolsItmes = createSlice({
     {
       name: 'Hoppscotch',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -230,8 +235,8 @@ let toolsItmes = createSlice({
     {
       name: 'LinkPreview',
       explain: 'LinkPreview API - Free Link Preview Service',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -242,8 +247,8 @@ let toolsItmes = createSlice({
     {
       name: '3',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -254,8 +259,8 @@ let toolsItmes = createSlice({
     {
       name: '4',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -266,8 +271,8 @@ let toolsItmes = createSlice({
     {
       name: '5',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -278,8 +283,8 @@ let toolsItmes = createSlice({
     {
       name: '6',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -290,8 +295,8 @@ let toolsItmes = createSlice({
     {
       name: 'browser-extensions',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
@@ -302,8 +307,8 @@ let toolsItmes = createSlice({
     {
       name: 'css-frameworks',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
@@ -314,8 +319,8 @@ let toolsItmes = createSlice({
     {
       name: 'career',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
@@ -326,8 +331,8 @@ let toolsItmes = createSlice({
     {
       name: 'cheatsheets',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/cheatsheets',
       tag: 'cheatsheets',
@@ -338,8 +343,8 @@ let toolsItmes = createSlice({
     {
       name: 'code-automation',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
@@ -350,8 +355,8 @@ let toolsItmes = createSlice({
     {
       name: 'content-and-writing',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
@@ -362,8 +367,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-mockup',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
@@ -374,8 +379,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
@@ -386,8 +391,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -398,8 +403,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
@@ -410,8 +415,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
@@ -422,8 +427,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
@@ -434,8 +439,8 @@ let toolsItmes = createSlice({
     {
       name: 'education',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
@@ -446,8 +451,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-builders',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
@@ -458,8 +463,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
@@ -470,8 +475,8 @@ let toolsItmes = createSlice({
     {
       name: 'entertainment',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
@@ -482,8 +487,8 @@ let toolsItmes = createSlice({
     {
       name: 'freebies',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
@@ -494,8 +499,8 @@ let toolsItmes = createSlice({
     {
       name: 'icons',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
@@ -506,8 +511,8 @@ let toolsItmes = createSlice({
     {
       name: 'illustrations',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
@@ -518,8 +523,8 @@ let toolsItmes = createSlice({
     {
       name: 'js-plugins',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
@@ -530,8 +535,8 @@ let toolsItmes = createSlice({
     {
       name: 'loaders-and-spinners',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
@@ -542,8 +547,8 @@ let toolsItmes = createSlice({
     {
       name: 'marketing-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
@@ -554,8 +559,8 @@ let toolsItmes = createSlice({
     {
       name: 'misc',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
@@ -566,8 +571,8 @@ let toolsItmes = createSlice({
     {
       name: 'nocode',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
@@ -578,8 +583,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -590,8 +595,8 @@ let toolsItmes = createSlice({
     {
       name: 'seo',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
@@ -602,8 +607,8 @@ let toolsItmes = createSlice({
     {
       name: 'stock-assets',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
@@ -614,8 +619,8 @@ let toolsItmes = createSlice({
     {
       name: 'wireframe',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
@@ -626,8 +631,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -638,8 +643,8 @@ let toolsItmes = createSlice({
     {
       name: 'editors-choice',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
@@ -650,8 +655,8 @@ let toolsItmes = createSlice({
     {
       name: 'api',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -662,8 +667,8 @@ let toolsItmes = createSlice({
     {
       name: 'browser-extensions',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
@@ -674,8 +679,8 @@ let toolsItmes = createSlice({
     {
       name: 'css-frameworks',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
@@ -686,8 +691,8 @@ let toolsItmes = createSlice({
     {
       name: 'career',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
@@ -698,8 +703,8 @@ let toolsItmes = createSlice({
     {
       name: 'charts',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/charts',
       tag: 'charts',
@@ -710,8 +715,8 @@ let toolsItmes = createSlice({
     {
       name: 'code-automation',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
@@ -722,8 +727,8 @@ let toolsItmes = createSlice({
     {
       name: 'content-and-writing',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
@@ -734,8 +739,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-mockup',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
@@ -746,8 +751,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
@@ -758,8 +763,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -770,8 +775,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
@@ -782,8 +787,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
@@ -794,8 +799,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
@@ -806,8 +811,8 @@ let toolsItmes = createSlice({
     {
       name: 'education',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
@@ -818,8 +823,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-builders',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
@@ -830,8 +835,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
@@ -842,8 +847,8 @@ let toolsItmes = createSlice({
     {
       name: 'entertainment',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
@@ -854,8 +859,8 @@ let toolsItmes = createSlice({
     {
       name: 'freebies',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
@@ -866,8 +871,8 @@ let toolsItmes = createSlice({
     {
       name: 'icons',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
@@ -878,8 +883,8 @@ let toolsItmes = createSlice({
     {
       name: 'illustrations',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
@@ -890,8 +895,8 @@ let toolsItmes = createSlice({
     {
       name: 'js-plugins',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
@@ -902,8 +907,8 @@ let toolsItmes = createSlice({
     {
       name: 'loaders-and-spinners',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
@@ -914,8 +919,8 @@ let toolsItmes = createSlice({
     {
       name: 'marketing-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
@@ -926,8 +931,8 @@ let toolsItmes = createSlice({
     {
       name: 'misc',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
@@ -938,8 +943,8 @@ let toolsItmes = createSlice({
     {
       name: 'nocode',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
@@ -950,8 +955,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -962,8 +967,8 @@ let toolsItmes = createSlice({
     {
       name: 'seo',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
@@ -974,8 +979,8 @@ let toolsItmes = createSlice({
     {
       name: 'stock-assets',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
@@ -986,8 +991,8 @@ let toolsItmes = createSlice({
     {
       name: 'wireframe',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
@@ -998,8 +1003,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -1010,8 +1015,8 @@ let toolsItmes = createSlice({
     {
       name: 'editors-choice',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
@@ -1022,8 +1027,8 @@ let toolsItmes = createSlice({
     {
       name: 'api',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -1034,8 +1039,8 @@ let toolsItmes = createSlice({
     {
       name: 'browser-extensions',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
@@ -1046,8 +1051,8 @@ let toolsItmes = createSlice({
     {
       name: 'css-frameworks',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
@@ -1058,8 +1063,8 @@ let toolsItmes = createSlice({
     {
       name: 'career',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
@@ -1070,8 +1075,8 @@ let toolsItmes = createSlice({
     {
       name: 'charts',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/charts',
       tag: 'charts',
@@ -1082,8 +1087,8 @@ let toolsItmes = createSlice({
     {
       name: 'code-automation',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
@@ -1094,8 +1099,8 @@ let toolsItmes = createSlice({
     {
       name: 'content-and-writing',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
@@ -1106,8 +1111,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-mockup',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
@@ -1118,8 +1123,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
@@ -1130,8 +1135,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1142,8 +1147,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
@@ -1154,8 +1159,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
@@ -1166,8 +1171,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
@@ -1178,8 +1183,8 @@ let toolsItmes = createSlice({
     {
       name: 'education',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
@@ -1190,8 +1195,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-builders',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
@@ -1202,8 +1207,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
@@ -1214,8 +1219,8 @@ let toolsItmes = createSlice({
     {
       name: 'entertainment',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
@@ -1226,8 +1231,8 @@ let toolsItmes = createSlice({
     {
       name: 'freebies',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
@@ -1238,8 +1243,8 @@ let toolsItmes = createSlice({
     {
       name: 'icons',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
@@ -1250,8 +1255,8 @@ let toolsItmes = createSlice({
     {
       name: 'illustrations',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
@@ -1262,8 +1267,8 @@ let toolsItmes = createSlice({
     {
       name: 'js-plugins',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
@@ -1274,8 +1279,8 @@ let toolsItmes = createSlice({
     {
       name: 'loaders-and-spinners',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
@@ -1286,8 +1291,8 @@ let toolsItmes = createSlice({
     {
       name: 'marketing-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
@@ -1298,8 +1303,8 @@ let toolsItmes = createSlice({
     {
       name: 'misc',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
@@ -1310,8 +1315,8 @@ let toolsItmes = createSlice({
     {
       name: 'nocode',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
@@ -1322,8 +1327,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -1334,8 +1339,8 @@ let toolsItmes = createSlice({
     {
       name: 'seo',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
@@ -1346,8 +1351,8 @@ let toolsItmes = createSlice({
     {
       name: 'stock-assets',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
@@ -1358,8 +1363,8 @@ let toolsItmes = createSlice({
     {
       name: 'wireframe',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
@@ -1370,8 +1375,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -1382,8 +1387,8 @@ let toolsItmes = createSlice({
     {
       name: 'editors-choice',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
@@ -1394,8 +1399,8 @@ let toolsItmes = createSlice({
     {
       name: 'api',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -1406,8 +1411,8 @@ let toolsItmes = createSlice({
     {
       name: 'browser-extensions',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/browser-extensions',
       tag: 'browser extensions',
@@ -1418,8 +1423,8 @@ let toolsItmes = createSlice({
     {
       name: 'css-frameworks',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/css-frameworks',
       tag: 'css frameworks',
@@ -1430,8 +1435,8 @@ let toolsItmes = createSlice({
     {
       name: 'career',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/career',
       tag: 'career',
@@ -1442,8 +1447,8 @@ let toolsItmes = createSlice({
     {
       name: 'charts',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/charts',
       tag: 'charts',
@@ -1454,8 +1459,8 @@ let toolsItmes = createSlice({
     {
       name: 'code-automation',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/code-automation',
       tag: 'code automation',
@@ -1466,8 +1471,8 @@ let toolsItmes = createSlice({
     {
       name: 'content-and-writing',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
@@ -1478,8 +1483,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-mockup',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
@@ -1490,8 +1495,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
@@ -1502,8 +1507,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1514,8 +1519,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
@@ -1526,8 +1531,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
@@ -1538,8 +1543,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
@@ -1550,8 +1555,8 @@ let toolsItmes = createSlice({
     {
       name: 'education',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
@@ -1562,8 +1567,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-builders',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
@@ -1574,8 +1579,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
@@ -1586,8 +1591,8 @@ let toolsItmes = createSlice({
     {
       name: 'entertainment',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
@@ -1598,8 +1603,8 @@ let toolsItmes = createSlice({
     {
       name: 'freebies',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
@@ -1610,8 +1615,8 @@ let toolsItmes = createSlice({
     {
       name: 'icons',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
@@ -1622,8 +1627,8 @@ let toolsItmes = createSlice({
     {
       name: 'illustrations',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
@@ -1634,8 +1639,8 @@ let toolsItmes = createSlice({
     {
       name: 'js-plugins',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
@@ -1646,8 +1651,8 @@ let toolsItmes = createSlice({
     {
       name: 'loaders-and-spinners',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
@@ -1658,8 +1663,8 @@ let toolsItmes = createSlice({
     {
       name: 'marketing-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
@@ -1670,8 +1675,8 @@ let toolsItmes = createSlice({
     {
       name: 'stock-assets',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
@@ -1682,8 +1687,8 @@ let toolsItmes = createSlice({
     {
       name: 'wireframe',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
@@ -1694,8 +1699,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -1706,8 +1711,8 @@ let toolsItmes = createSlice({
     {
       name: 'editors-choice',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
@@ -1718,8 +1723,8 @@ let toolsItmes = createSlice({
     {
       name: 'api',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/api',
       tag: 'api',
@@ -1730,8 +1735,8 @@ let toolsItmes = createSlice({
     {
       name: 'content-and-writing',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/content-and-writing',
       tag: 'content & writing',
@@ -1742,8 +1747,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-mockup',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-mockup',
       tag: 'design mockup',
@@ -1754,8 +1759,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-resources',
       tag: 'design resources',
@@ -1766,8 +1771,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1778,8 +1783,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1790,8 +1795,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1802,8 +1807,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1814,8 +1819,8 @@ let toolsItmes = createSlice({
     {
       name: 'design-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/design-tools',
       tag: 'design tools',
@@ -1826,8 +1831,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-productivity',
       tag: 'developer productivity',
@@ -1838,8 +1843,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-resources',
       tag: 'developer resources',
@@ -1850,8 +1855,8 @@ let toolsItmes = createSlice({
     {
       name: 'developer-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/developer-tools',
       tag: 'developer tools',
@@ -1862,8 +1867,8 @@ let toolsItmes = createSlice({
     {
       name: 'education',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/education',
       tag: 'education',
@@ -1874,8 +1879,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-builders',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-builders',
       tag: 'email builders',
@@ -1886,8 +1891,8 @@ let toolsItmes = createSlice({
     {
       name: 'email-tools',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/email-tools',
       tag: 'email tools',
@@ -1898,8 +1903,8 @@ let toolsItmes = createSlice({
     {
       name: 'entertainment',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/entertainment',
       tag: 'entertainment',
@@ -1910,8 +1915,8 @@ let toolsItmes = createSlice({
     {
       name: 'freebies',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/freebies',
       tag: 'freebies',
@@ -1922,8 +1927,8 @@ let toolsItmes = createSlice({
     {
       name: 'icons',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/icons',
       tag: 'icons',
@@ -1934,8 +1939,8 @@ let toolsItmes = createSlice({
     {
       name: 'illustrations',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/illustrations',
       tag: 'illustrations',
@@ -1946,8 +1951,8 @@ let toolsItmes = createSlice({
     {
       name: 'js-plugins',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/js-plugins',
       tag: 'js plugins',
@@ -1958,8 +1963,8 @@ let toolsItmes = createSlice({
     {
       name: 'loaders-and-spinners',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/loaders-and-spinners',
       tag: 'loaders & spinners',
@@ -1970,8 +1975,8 @@ let toolsItmes = createSlice({
     {
       name: 'marketing-resources',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/marketing-resources',
       tag: 'marketing resources',
@@ -1982,8 +1987,8 @@ let toolsItmes = createSlice({
     {
       name: 'misc',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/misc',
       tag: 'misc',
@@ -1994,8 +1999,8 @@ let toolsItmes = createSlice({
     {
       name: 'nocode',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/nocode',
       tag: 'nocode',
@@ -2006,8 +2011,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -2018,8 +2023,8 @@ let toolsItmes = createSlice({
     {
       name: 'seo',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/seo',
       tag: 'seo',
@@ -2030,8 +2035,8 @@ let toolsItmes = createSlice({
     {
       name: 'stock-assets',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/stock-assets',
       tag: 'stock assets',
@@ -2042,8 +2047,8 @@ let toolsItmes = createSlice({
     {
       name: 'wireframe',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/wireframe',
       tag: 'wireframe',
@@ -2054,8 +2059,8 @@ let toolsItmes = createSlice({
     {
       name: 'productivity',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/productivity',
       tag: 'productivity',
@@ -2066,8 +2071,8 @@ let toolsItmes = createSlice({
     {
       name: 'editors-choice',
       explain: 'A free, fast and beautiful API request builder',
-      img: <img src={img} alt='hoppscotch' />,
-      icon: <img src={img} alt='hoppscotch' />,
+      // img: <img src={img} alt='hoppscotch' />,
+      // icon: <img src={img} alt='hoppscotch' />,
       artist: 'By Liyas Thomas',
       category: '/editors-choice',
       tag: 'editors choice',
@@ -2075,9 +2080,18 @@ let toolsItmes = createSlice({
       bookmark: false,
 
     },
-  ]
-})
+  ],
+  reducers: {
+    setBookmark(state, action ){
+      const idx = action.payload[0];
+      const mark = action.payload[1];
+      
+      state[idx].bookmark = mark;
 
+      console.log(state[idx].bookmark);
+    }
+  }
+});
 
 export default configureStore({
   reducer: {
@@ -2087,5 +2101,4 @@ export default configureStore({
 });
 
 
-// export let { gotoContentTop,changeTopArr } = categorys.actions;
-// export let { gotoContentTop,changeTopArr } = tags.ations;
+export let { setBookmark } = toolsItmes.actions;
