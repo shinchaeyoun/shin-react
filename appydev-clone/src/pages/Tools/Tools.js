@@ -31,6 +31,8 @@ const ListItem = styled(S.BorderBox)`
   border: none;
   border-bottom: 1px solid #ddd;
 
+  cursor: pointer;
+
   > div {
     display: flex;
     align-items: center;
@@ -75,6 +77,8 @@ const DownMenuBtn = styled(S.BorderBox)`
   font-family: ${({theme}) => theme.fonts.assistant};
   text-align: center;
   background-color: #fff;
+
+  cursor: pointer;
 
   > svg {
     margin-left: 5px;

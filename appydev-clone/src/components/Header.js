@@ -43,6 +43,7 @@ const NavBorderBox = styled(S.BorderBox)`
   height: 48px;
   line-height: 40px;
   text-align: center;
+  cursor: pointer;
   
   &:active{
     border-bottom-width: 2px;
@@ -71,7 +72,6 @@ const NavItemWrap = styled.div`
   justify-content: space-between;
 
   min-width: 430px;
-
 ` 
 const IconLogo = styled(NavBorderBox)`
   width: 50px;
@@ -81,6 +81,7 @@ const IconLogo = styled(NavBorderBox)`
 const Logo = styled.div`
   font-size: 24px;
   font-weight: bold;
+  cursor: pointer;
 `
 const SearchBox = styled(S.BorderBox)`
   display: flex;
@@ -145,7 +146,7 @@ function Header() {
       <Nav>
         <Container>
           <IconLogo onClick={()=>{navigate('/')}}>#</IconLogo>
-          <Logo>appydev</Logo>
+          <Logo onClick={()=>{navigate('/')}}>appydev</Logo>
 
           <SearchBox>
             <div>O</div>

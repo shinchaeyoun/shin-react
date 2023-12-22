@@ -20,6 +20,7 @@ const MenuItem = styled.li`
   padding: 3px 15px;
   height: 48px;
   line-height: 40px;
+  cursor: pointer;
   
   &:hover {
     background-color: #edf2f7;
@@ -42,6 +43,8 @@ const DownMenu = styled(S.ShadowBox)`
   
   z-index: 999;
   overflow: hidden;
+
+  cursor: pointer;
 
   ${props => props.$border &&
     css`
