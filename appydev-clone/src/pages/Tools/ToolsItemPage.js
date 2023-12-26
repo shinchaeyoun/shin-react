@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setBookmark } from '../../store';
+import { setBookmark } from '../../store.js';
 
 import styled, { keyframes } from 'styled-components';
 import S from '../../Styles/GlobalBlock.js';

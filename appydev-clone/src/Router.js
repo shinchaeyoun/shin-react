@@ -8,7 +8,7 @@ import Tool from './pages/Submit/Tool.js';
 import Community from './pages/Submit/Community.js';
 import Podcast from './pages/Submit/Podcast.js';
 import Bookmark from './pages/Bookmark.js';
-import Communities from './pages/Communities.js';
+import Communities from './pages/Communities/Communities.js';
 import Podcasts from './pages/Podcasts.js';
 
 import Header from './components/Header.js';

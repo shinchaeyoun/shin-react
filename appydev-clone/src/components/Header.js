@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useEffect, useState, useRef } from 'react';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
-import Transition from 'react-transition-group/Transition';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import styled, {css} from 'styled-components';
 import S from '../Styles/GlobalBlock';
@@ -13,8 +13,6 @@ import { ReactComponent as Bookmark } from "../assets/images/bookmark.svg";
 import { ReactComponent as Tools } from '../assets/images/menu.svg';
 import { ReactComponent as Community } from '../assets/images/community.svg';
 import { ReactComponent as Podcast } from '../assets/images/podcast.svg';
-
-
 
 import './Header.scss';
 import DownMenu from '../components/DownMenu';
@@ -123,11 +121,26 @@ const Nav = styled.nav`
 `
 function Header() {
   const navigate = useNavigate();
-  const [isBookmarkNum, setIsBookmarkNum] = useState(0);
+  const toolsItmes = useSelector((state) => state.toolsItmes);
   const [isDownMenu, setIsDownMenu] = useState(false);
+  const [isBookmarkNum, setIsBookmarkNum] = useState(0);
   const downMenuRef = useRef();
+  let bmArr = [];
 
-  const duration = 300;
+  const bookmarkFn = () => {
+    for (let i = 0; i < toolsItmes.length; i++) {
+      const item = toolsItmes[i];
+      if(item.bookmark) {
+        bmArr.push(item);
+      };
+      setIsBookmarkNum(bmArr.length);
+    };
+  };
+
+  useEffect(()=>{
+    bookmarkFn();
+    console.log('toolsItmes changing');
+  }, [toolsItmes]);
 
   useEffect(()=>{
     const handleOutside = (e) => {
@@ -149,7 +162,7 @@ function Header() {
           <Logo onClick={()=>{navigate('/')}}>appydev</Logo>
 
           <SearchBox>
-            <div>O</div>
+            <div>0</div>
             <input placeholder='Search Tools, Creators & Communities'></input>
           </SearchBox>
 

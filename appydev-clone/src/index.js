@@ -10,7 +10,6 @@ import './Styles/variables.scss'
 
 import store from './store.js';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

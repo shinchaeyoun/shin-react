@@ -7,6 +7,7 @@ const colors = {
   subGray: '#5a5a5a',
   darkGray: '#2d3748',
   darkNavy: '#2d3748',
+
 };
 
 const fonts = {
@@ -18,11 +19,9 @@ const fonts = {
   chomsky: 'Chomsky'
 };
 
-
 const theme = {
   colors,
   fonts,
 };
-
 
 export default theme;

@@ -23,7 +23,6 @@ const Section = styled.section`
 `
 const Main = styled.main`
   margin: 0 auto;
-  
 `
 const S = {
   Title,

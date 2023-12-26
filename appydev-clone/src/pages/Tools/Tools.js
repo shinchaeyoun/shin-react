@@ -11,9 +11,9 @@ import './Tools.scss';
 
 
 import DownMenu from '../../components/DownMenu';
-import ToolsItemPage from '../components/ToolsItemPage.js'
+import ToolsItemPage from './ToolsItemPage.js'
 
-import {listIcon} from '../../Data/ListIcon.js';
+import {listIcon} from './ListIcon.js';
 
 import { ReactComponent as Arrow } from "../../assets/images/arrow-down.svg";
 
@@ -209,9 +209,9 @@ function Tools() {
             </TitleBox>
 
             <ToolsItemPage
-            mapContent={toolsItem}
-            $nowPage={isFilter}
-            $setItemLength={setItemLength}/>
+              mapContent={toolsItem}
+              $nowPage={isFilter}
+              $setItemLength={setItemLength}/>
           </>
           :
           <>
@@ -226,9 +226,9 @@ function Tools() {
             </TitleBox>
             
             <ToolsItemPage
-            mapContent={toolsItem}
-            $nowPage={nowPage}
-            $setItemLength={setItemLength}/>
+              mapContent={toolsItem}
+              $nowPage={nowPage}
+              $setItemLength={setItemLength}/>
           </>
         }
       </Section>
