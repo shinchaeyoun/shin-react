@@ -105,6 +105,14 @@ function Submit() {
             <Title>Podcast</Title>
             <TxtBox>If you are hooked to some awsome podcasts, do share is with us.</TxtBox>
           </Item>
+
+          <Route path="/about" element={ <About/> } >  
+            <Route path="member" element={ <div>멤버들</div> } />
+            <Route path="location" element={ <div>회사위치</div> } />
+
+          </Route>
+
+          <Outlet></Outlet>
         </ItemContainer>
       }
 

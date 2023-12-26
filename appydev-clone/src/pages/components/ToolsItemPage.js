@@ -13,6 +13,7 @@ import { ReactComponent as Check } from "../../assets/images/tools-item/check-ci
 import { ReactComponent as Link } from "../../assets/images/tools-item/external-link.svg";
 
 
+
 const animationTiming = {
   enter: 200,
   exit: 200,
@@ -75,6 +76,27 @@ const HoverBox = styled.div`
   }
 }
 
+`
+const ImgBox = styled.div`
+  max-height: 192px;
+  overflow: hidden;
+  > img {
+    width: 100%; height: 100%;
+  }
+`
+const Shopicon = styled(S.ShadowBox)`
+  position: absolute;
+  top: 162px;
+  left: 10px;
+  width: 60px; height: 60px;
+  color: #718096;
+  border-radius: 50%;
+  border-bottom-width: 2px;
+  border-color:#a0aec0a1;
+  overflow: hidden;
+  > img {
+    width: 100%; height: 100%;
+  }
 `
 const ToolItem = styled(S.ShadowBox)`
   min-height: 410px;
@@ -206,11 +228,14 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
                     </HoverBox>
                   } */}
                   
-                  <div className='imgBox'>
-                    {item.img}
-                  </div>
+                  <ImgBox>
+                    <img src={require('../../assets/images/tools-item/'+item.img+'.png')} alt={item.img}/>
+                  </ImgBox>
 
-                  <S.ShadowBox className='shopIcon'>{item.icon}</S.ShadowBox>
+                  <Shopicon>
+                    {/* {item.icon} */}
+                    <img src={require('../../assets/images/tools-item/'+item.icon+'.png')} alt={item.icon}/>
+                  </Shopicon>
 
                   <div className='txtBox'>
                     <S.Title className='title'>

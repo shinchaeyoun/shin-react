@@ -13,8 +13,10 @@ import './Tools.scss';
 import DownMenu from '../../components/DownMenu';
 import ToolsItemPage from '../components/ToolsItemPage.js'
 
+import {listIcon} from '../../Data/ListIcon.js';
 
 import { ReactComponent as Arrow } from "../../assets/images/arrow-down.svg";
+
 
 
 
@@ -25,6 +27,10 @@ const List = styled.ul`
   padding: 60px 0;
   height: 100%;
   width: 20%;
+`
+const ListIcon = styled.span`
+  margin-right: 5px;
+  width: 20px;
 `
 const ListItem = styled(S.BorderBox)`
   font-size: 14px;
@@ -48,7 +54,7 @@ const ListItem = styled(S.BorderBox)`
     }
 
     > .icon {
-      margin-right: 5px;
+      
     }
   }
 `
@@ -142,6 +148,7 @@ function Tools() {
       <List>
         {
           toolsCategoty.map((item, index) => {
+            console.log(index);
             return (
               <ListItem as='li' key={index}
                 onClick={()=>{
@@ -153,7 +160,12 @@ function Tools() {
                 }}
               >
                 <div className={activeCate == index ? 'active':null}>
-                  <span className='icon'>{item.icon}</span>
+                  {listIcon.map(({name, icon}, idx)=>(
+                    idx === index &&
+                    <ListIcon>
+                      {icon()}
+                    </ListIcon> 
+                  ))}
                   <span>{item.name}</span>
                 </div>
               </ListItem>
