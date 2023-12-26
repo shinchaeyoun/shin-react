@@ -146,7 +146,7 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
   };
 
   useEffect(()=>{
-    // isBookmark가 수정될 때 마다 실행되는 useEffect
+    // isBookmark가 수정될 때 마다 실행되는 useEffectcig
     console.log(isBookmark,'isBookmark changing');
   }, [isBookmark]);
 

@@ -106,8 +106,9 @@ const TitleBox = styled.div`
   }
 `
 const Section = styled(S.Section)`
-  padding: 80px 0px;
+  padding: 80px 0px 80px 15px;
   width: 80%;
+
 `
 const Main = styled(S.Main)`
   display: flex;
@@ -148,7 +149,6 @@ function Tools() {
       <List>
         {
           toolsCategoty.map((item, index) => {
-            console.log(index);
             return (
               <ListItem as='li' key={index}
                 onClick={()=>{
@@ -162,7 +162,7 @@ function Tools() {
                 <div className={activeCate == index ? 'active':null}>
                   {listIcon.map(({name, icon}, idx)=>(
                     idx === index &&
-                    <ListIcon>
+                    <ListIcon key={idx}>
                       {icon()}
                     </ListIcon> 
                   ))}
