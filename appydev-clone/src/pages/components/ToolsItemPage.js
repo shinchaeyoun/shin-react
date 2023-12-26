@@ -127,7 +127,7 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
   const [hoverIdx, setHoverIdx] = useState('');
   
   const toolsItmes = useSelector((state) => state.toolsItmes);
-  const [toolsItem, setToolsItem] = useState(toolsItmes);
+  // const [toolsItem, setToolsItem] = useState(toolsItmes);
 
   const handleMouseOver = (index) => {
     setIsHover(true);
@@ -140,15 +140,9 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
   };
 
   const bookmarkFn = (index) => {
-    console.log('클릭마다 실행?');
     setIsBookmark(!isBookmark);
-    dispatch(setBookmark([index, isBookmark]));
+    dispatch(setBookmark([index, !isBookmark]));
   };
-
-  useEffect(()=>{
-    // isBookmark가 수정될 때 마다 실행되는 useEffectcig
-    console.log(isBookmark,'isBookmark changing');
-  }, [isBookmark]);
 
   useEffect(()=>{
     let arr = [];
@@ -176,17 +170,18 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
                 <ToolItem className='tool_item'>
                   {
                     index === hoverIdx &&
-                  
-                  <CSSTransition
-                    in={isHover}
-                    timeout={animationTiming}
-                    mountOnEnter
-                    unmountOnExit
-                  >
-                      <HoverBox onClick={()=>{
-                        bookmarkFn(index);
-                      }}>
-                        <Bookmark className='fade-slide'>
+                    <CSSTransition
+                      in={isHover}
+                      timeout={animationTiming}
+                      mountOnEnter
+                      unmountOnExit
+                    >
+                      <HoverBox>
+                        <Bookmark
+                          className='fade-slide'
+                          onClick={()=>{
+                          bookmarkFn(index);
+                        }}>
                         {
                           item.bookmark ?
                           <>
@@ -205,35 +200,14 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
                           <Link width='12px' height='12px'/>
                         </ToLink>
                       </HoverBox>
-                  </CSSTransition>
-                    }
-                  {/* {
-                    isHover &&
-                    <HoverBox>
-                      {
-                        item.bookmark ?
-                        <Bookmark>
-                          <Check width='15px'/>
-                          <p>bookmarked</p>
-                        </Bookmark>
-                        :
-                        <Bookmark>
-                          <Add width='15px'/>
-                          <p>bookmark</p>
-                        </Bookmark>
-                      }
-                      <ToLink>
-                        <Link width='12px'/>
-                      </ToLink>
-                    </HoverBox>
-                  } */}
+                    </CSSTransition>
+                  }
                   
                   <ImgBox>
                     <img src={require('../../assets/images/tools-item/'+item.img+'.png')} alt={item.img}/>
                   </ImgBox>
 
                   <Shopicon>
-                    {/* {item.icon} */}
                     <img src={require('../../assets/images/tools-item/'+item.icon+'.png')} alt={item.icon}/>
                   </Shopicon>
 
