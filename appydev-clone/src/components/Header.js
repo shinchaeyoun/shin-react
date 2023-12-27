@@ -8,6 +8,7 @@ import S from '../Styles/GlobalBlock';
 
 import { ReactComponent as Arrow } from "../assets/images/arrow-down.svg";
 import { ReactComponent as ArrowUp } from "../assets/images/arrow-up.svg";
+import { ReactComponent as Search } from "../assets/images/search.svg";
 import { ReactComponent as Bookmark } from "../assets/images/bookmark.svg";
 
 import { ReactComponent as Tools } from '../assets/images/menu.svg';
@@ -139,7 +140,6 @@ function Header() {
 
   useEffect(()=>{
     bookmarkFn();
-    console.log('toolsItmes changing');
   }, [toolsItmes]);
 
   useEffect(()=>{
@@ -162,7 +162,7 @@ function Header() {
           <Logo onClick={()=>{navigate('/')}}>appydev</Logo>
 
           <SearchBox>
-            <div>0</div>
+            <Search width='20px' height='20px' />
             <input placeholder='Search Tools, Creators & Communities'></input>
           </SearchBox>
 

@@ -5,9 +5,8 @@ const colors = {
   gray: '#a9a9a9',
   lightGray: '#d3d3d3',
   subGray: '#5a5a5a',
+  deepGray: '#4a5568',
   darkGray: '#2d3748',
-  darkNavy: '#2d3748',
-
 };
 
 const fonts = {

@@ -18,36 +18,8 @@ const animationTiming = {
   enter: 200,
   exit: 200,
 };
-const openHover = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-`
-const closeMenu = keyframes`
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-`
-const Bookmark = styled.div`
-  display: flex;
-  align-items: center;
 
-  padding: 0 8px;
-  height: 30px;
-  border: 2px solid ${({theme}) => theme.colors.darkNavy};
-  border-radius: 4px;
-  > svg {margin-right: 5px;}
-`
+
 const ToLink = styled.div`
   width: 30px; height: 30px;
   line-height: 30px;
@@ -55,28 +27,7 @@ const ToLink = styled.div`
   border-radius: 4px;
   background-color: #4a5568;
 `
-const HoverBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  padding: 10px;
 
-  font-size: 12px;
-
-&.enter-active {
-  > div {
-    animation: ${openHover} 0.2s infinite;
-  }
-}
-&.exit-active {
-  > div {
-    animation: ${closeMenu} 0.2s infinite;
-  }
-}
-
-`
 const ImgBox = styled.div`
   max-height: 192px;
   overflow: hidden;
@@ -176,8 +127,8 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
                       mountOnEnter
                       unmountOnExit
                     >
-                      <HoverBox>
-                        <Bookmark
+                      <S.HoverBox>
+                        <S.Bookmark
                           className='fade-slide'
                           onClick={()=>{
                           bookmarkFn(index);
@@ -194,12 +145,12 @@ function ToolsItemPage({ mapContent, $nowPage, $setItemLength }) {
                             <p>bookmark</p>
                           </>
                         }
-                        </Bookmark>
+                        </S.Bookmark>
                             
                         <ToLink className='fade-slide'>
                           <Link width='12px' height='12px'/>
                         </ToLink>
-                      </HoverBox>
+                      </S.HoverBox>
                     </CSSTransition>
                   }
                   

@@ -4,6 +4,7 @@
 .fade-slide-enter-active {
   animation: openMenu 2s forwards;
 }
+// forwards
 
 .fade-slide-exit {
 }
@@ -11,15 +12,16 @@
 .fade-slide-exit-active {
   animation: closeMenu 2s forwards;
 }
+// forwards
 
 @keyframes openMenu {
   0% {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-20px);
   }
-  // 50% {
-  //   opacity: 0.8;
-  // }
+  50% {
+    opacity: 0.8;
+  }
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -31,11 +33,11 @@
     opacity: 1;
     transform: translateY(0px);
   }
-  // 50% {
-  //   opacity: 0.8;
-  // }
+  50% {
+    opacity: 0.8;
+  }
   100% {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-20px);
   }
 }

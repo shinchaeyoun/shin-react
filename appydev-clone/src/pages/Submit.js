@@ -1,14 +1,20 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 
 import styled from 'styled-components';
 import S from '../Styles/GlobalBlock';
+import { CSSTransition } from 'react-transition-group';
+import './Submit/style.scss'
 
 import { ReactComponent as Tools } from '../assets/images/menu.svg';
 import { ReactComponent as Community } from '../assets/images/community.svg';
 import { ReactComponent as Podcast } from '../assets/images/podcast.svg';
 
+const animationTiming = {
+  enter: 3000,
+  exit: 3000,
+};
 
 const Title = styled(S.Title)`
   width: 100%;
@@ -61,59 +67,83 @@ const Main = styled(S.Main)`
   min-height: 500px;
 `
 function Submit() {
+  const submitCategory = [
+    {
+      title: 'tool',
+      explan: 'Submit a tool or product which you think other people should be using more often',
+      icon: <Tools width='64px' height='64px'/>,
+      link: '/submit/tool',
+    },
+    {
+      title: 'community',
+      explan: 'If you are a member of or know a awesome community, do let us know',
+      icon: <Community width='64px' height='64px'/>,
+      link: '/submit/community',
+    },
+    {
+      title: 'podcast',
+      explan: 'If you are hooked to some awsome podcasts, do share is with us.',
+      icon: <Podcast width='64px' height='64px'/>,
+      link: '/submit/podcast',
+    },
+  ]
+
+  const location = useLocation();
   const navigate = useNavigate();
+  const [isMenuShow, setIsMenuShow] = useState(true);
   const [isOutletShow, setIsOutletShow] = useState(false);
 
-  const MoveTo = (page) => {
-    setIsOutletShow(true);
+  const moveTo = (page) => {
     navigate(page, {
       state: {
         is: isOutletShow,
-        set: setIsOutletShow,
       }
     });
   };
-  
+
   useEffect(()=>{
-    // setIsOutletShow(false);
-    console.log(isOutletShow,'2');
-  },[]);
+    if(location.pathname == '/submit'){
+      setIsMenuShow(true);
+      setIsOutletShow(false);
+    }
+  },[location]);
 
   return(
     <Main>
       <Title>What do you want to submit?</Title>
-      
+
+      <Outlet context={{ isOutletShow, setIsOutletShow, setIsMenuShow }} />
+
       {
-        isOutletShow ?
-        <Outlet></Outlet>
-        :
-        <ItemContainer>
-          <Item onClick={()=>{}}>
-            <Tools width='64px' height='64px'/>
-            <Title>Tool</Title>
-            <TxtBox>Submit a tool or product which you think other people should be using more often</TxtBox>
-          </Item>
-
-          <Item onClick={()=>{setIsOutletShow(true); navigate('/submit/community', {state: {isOutletShow: isOutletShow}})}}>
-            <Community width='64px' height='64px'/>
-            <Title>Communities</Title>
-            <TxtBox>If you are a member of or know a awesome community, do let us know</TxtBox>
-          </Item>
-
-          <Item onClick={()=>{MoveTo('/submit/podcast')}}>
-            <Podcast width='64px' height='64px'/>
-            <Title>Podcast</Title>
-            <TxtBox>If you are hooked to some awsome podcasts, do share is with us.</TxtBox>
-          </Item>
-
-          <Route path="/about" element={ <About/> } >  
-            <Route path="member" element={ <div>멤버들</div> } />
-            <Route path="location" element={ <div>회사위치</div> } />
-
-          </Route>
-
-          <Outlet></Outlet>
-        </ItemContainer>
+        !isOutletShow && 
+          <CSSTransition
+            in={isMenuShow}
+            timeout={animationTiming}
+            mountOnEnter
+            unmountOnExit
+            classNames="fade-slide"
+          >
+            <ItemContainer>
+              {
+                submitCategory.map((item, index) => {
+                  return (
+                    <Item
+                      key={index}
+                      onClick={()=>{
+                        setIsOutletShow(true);
+                        setIsMenuShow(false)
+                        moveTo(item.link)
+                      }}
+                      >
+                      {item.icon}
+                      <Title>{item.title}</Title>
+                      <TxtBox>{item.explan}</TxtBox>
+                    </Item>
+                  )
+                })
+              }
+            </ItemContainer>
+          </CSSTransition>
       }
 
       <div>

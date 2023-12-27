@@ -9,7 +9,7 @@ import Community from './pages/Submit/Community.js';
 import Podcast from './pages/Submit/Podcast.js';
 import Bookmark from './pages/Bookmark.js';
 import Communities from './pages/Communities/Communities.js';
-import Podcasts from './pages/Podcasts.js';
+import Podcasts from './pages/Podcasts/Podcasts.js';
 
 import Header from './components/Header.js';
 

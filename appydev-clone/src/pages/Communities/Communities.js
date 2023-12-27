@@ -24,15 +24,15 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
 
-  > svg {
+  > div {
     margin-left: 8px;
   }
 `
 const Explain = styled.p`
-  padding: 10px 0;
-  color: #4a5568;
+  padding: 20px 0;
+  color: ${({theme}) => theme.colors.deepGray};
+
   font-size: 22px;
-  font-weight: 500;
   line-height: 26px;
 `
 const FoundedInfo = styled.div`
@@ -56,69 +56,20 @@ const TextBox = styled.div`
   padding: 30px 20px;
   height: 45%;
   background-color: #fff;
-
   ${S.Title}{
     font-size: 28px;
     font-weight: 600;
-    color: #4a5568;
+    color: ${({theme}) => theme.colors.deepGray};
   }
 `
 const CommuItem = styled(S.ShadowBox)`
   margin-bottom: 20px;
-  /* height: 534px; */
   overflow: hidden;
   border: none;
 `
-const CommunitiesWrap = styled.div`
+const ItemContainer = styled.div`
   padding-right: 30px;
   width: 70%;
-`
-
-const TopArea = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 600;
-  > svg {
-    margin-right: 8px;
-  }
-`
-const BottomArea = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  height: 40px;
-
-  border: 2px solid #cbd5df;
-  border-radius: 7px;
-
-  overflow: hidden;
-  input,button { height: 100%; border: none; outline: none;}
-  input {
-    width: 80%;
-    padding: 0 10px;
-
-    &::placeholder{
-      color: #a6b1be;
-    }
-  }
-  button {
-    width: 20%;
-    background-color: #cbd5df;
-    color: #49586d;
-  }
-`
-const NewsLetter = styled(S.ShadowBox)`
-  padding: 20px;
-  color: #4a5568;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  background-color: #fff;
-`
-const NewsLetterWrap = styled.div`
-  width: 30%;
 `
 const Section = styled(S.Section)`
   display: flex;
@@ -130,17 +81,20 @@ const TitleArea = styled.div`
   margin-top: 120px;
   margin-bottom: 60px;
   width: 100%;
-
+  color: ${({theme}) => theme.colors.deepGray};
+  
   ${S.Title}{
     font-size: 28px;
+    margin-bottom: 20px;
   }
   p {
-    color: #4a5568;
     font-size: 20px;
   }
-`
+  `
 const Main = styled(S.Main)`
   max-width: 1024px;
+  padding: 0 20px;
+  font-family: ${({theme}) => theme.fonts.outfit};
 `
 function Communities() {
   return(
@@ -151,7 +105,7 @@ function Communities() {
       </TitleArea>
 
       <Section>
-        <CommunitiesWrap>
+        <ItemContainer>
           {
             ItemData.map((item, index)=>{
               return (
@@ -163,9 +117,10 @@ function Communities() {
                   <TextBox>
                     <Icon>
                       {
-                        item.icon.map((icon, idx) => (icon))
+                        item.icon.map((icon, idx) => (
+                          <div key={idx}>{icon}</div>
+                        ))
                       }
-                      {/* {item.icon} */}
                     </Icon>
                     
                     <S.Title>{item.title}</S.Title>
@@ -183,21 +138,21 @@ function Communities() {
               )
             })
           }
-        </CommunitiesWrap>
+        </ItemContainer>
 
-        <NewsLetterWrap>
-          <NewsLetter>
-            <TopArea>
+        <S.NewsLetterWrap>
+          <S.NewsLetter>
+            <S.TopArea>
               <Letter width='25px' height='25px' />
               <div>Newsletter</div>
-            </TopArea>
+            </S.TopArea>
             <p>A curated list of handpicked products delivered to your email every week</p>
-            <BottomArea>
+            <S.BottomArea>
               <input placeholder='Enter your email address'></input>
               <button>Join</button>
-            </BottomArea>
-          </NewsLetter>
-        </NewsLetterWrap>
+            </S.BottomArea>
+          </S.NewsLetter>
+        </S.NewsLetterWrap>
       </Section>
     </Main>
   )
