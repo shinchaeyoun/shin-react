@@ -16,3 +16,8 @@ npm install styled-components
 
 react-bootStrap
 npm install react-bootstrap bootstrap
+
+리액트 아이콘
+npm install react-icons --save
+
+
