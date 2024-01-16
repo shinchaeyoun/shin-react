@@ -108,12 +108,10 @@ function Submit() {
         timeout={animationTiming}
         mountOnEnter
         unmountOnExit
-        classNames='testCss'
+        classNames='movingPage'
       >
-        <Outlet context={{ isOutletShow, setIsOutletShow, setIsMenuShow }} />
-      </CSSTransition>
       {
-        !isOutletShow &&
+        !isOutletShow ?
           <ItemContainer>
             {
               submitCategory.map((item, index) => {
@@ -134,8 +132,10 @@ function Submit() {
               })
             }
           </ItemContainer>
+          :
+          <Outlet context={{ isOutletShow, setIsOutletShow, setIsMenuShow }} />
       }
-      
+      </CSSTransition>
 
       <div>
         Help Appydev collect more tools, communities & podcasts which other can use and share. Plus the indie developers get their products & tools more exposure and ger benefited.

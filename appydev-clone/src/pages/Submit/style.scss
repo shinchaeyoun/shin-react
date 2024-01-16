@@ -1,25 +1,26 @@
-.openForm {
+.movingPage {
   border: 1px solid #f00;
-  // animation: exitTest .3s forwards;
-
 }
 
-.openForm-enter {
+
+.movingPage-enter {
   border: 1px solid #0f0;
 }
-
-.openForm-enter-active {
+.movingPage-enter-active {
   animation: openTest 2s forwards;
 }
-// forwards
-
-.testCss-enter {
-  background-color: red;
-}
-.openForm-exit {
+.movingPage-enter-done {
+  animation: openTest 2s forwards;
 }
 
-.openForm-exit-active {
+
+.movingPage-exit {
+  animation: openTest .2s forwards;
+}
+.movingPage-exit-active {
+  animation: exitTest 1s forwards;
+}
+.movingPage-exit-done {
   animation: exitTest 1s forwards;
 }
 // forwards
@@ -41,7 +42,7 @@
     background-color: #fff;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
     // transform: translateY(20px) scale(0.98);
     background-color: blue;
   }

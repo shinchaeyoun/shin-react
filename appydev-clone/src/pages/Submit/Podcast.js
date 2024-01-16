@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import S from '../../Styles/GlobalBlock';
 import { CSSTransition } from 'react-transition-group';
-import './style.scss'
+// import './style.scss'
 
 const animationTiming = {
   enter: 2000,
@@ -28,38 +28,35 @@ function Podcast() {
   const { isOutletShow, setIsOutletShow, setIsMenuShow } = useOutletContext();
 
   function extiFn () {
-    console.log('exit function');
     navigate('/submit');
     setIsOutletShow(!isOutletShow);
     setIsMenuShow(true);
   };
 
-
   useEffect(()=>{
-    console.log('hi enter',isOutletShow);
+    console.log('enter',isOutletShow);
 
     return () => {
-      extiFn();
-      console.log('bye exit',isOutletShow);
+      console.log('exit',isOutletShow);
     }
   });
 
   return(
-    <CSSTransition
-      in={isOutletShow}
-      timeout={animationTiming}
-      mountOnEnter
-      unmountOnExit
-      className="openForm"
-    >
+    // <CSSTransition
+    //   in={isOutletShow}
+    //   timeout={animationTiming}
+    //   mountOnEnter
+    //   unmountOnExit
+    //   classNames='movingPage'
+    //   >
       <ReturnBtn
         onClick={()=>{
-          setIsOutletShow(!isOutletShow);
+          extiFn();
         }}
         >
         Podcast
       </ReturnBtn>
-    </CSSTransition>
+    // {/* </CSSTransition> */}
   )
 }
 
