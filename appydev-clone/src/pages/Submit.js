@@ -5,15 +5,14 @@ import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import S from '../Styles/GlobalBlock';
 import { CSSTransition } from 'react-transition-group';
-import './Submit/style.scss'
 
 import { ReactComponent as Tools } from '../assets/images/menu.svg';
 import { ReactComponent as Community } from '../assets/images/community.svg';
 import { ReactComponent as Podcast } from '../assets/images/podcast.svg';
 
 const animationTiming = {
-  enter: 3000,
-  exit: 3000,
+  enter: 10000,
+  exit: 10000,
 };
 
 const Title = styled(S.Title)`
@@ -93,14 +92,6 @@ function Submit() {
   const [isMenuShow, setIsMenuShow] = useState(true);
   const [isOutletShow, setIsOutletShow] = useState(false);
 
-  const moveTo = (page) => {
-    navigate(page, {
-      state: {
-        is: isOutletShow,
-      }
-    });
-  };
-
   useEffect(()=>{
     if(location.pathname == '/submit'){
       setIsMenuShow(true);
@@ -112,39 +103,39 @@ function Submit() {
     <Main>
       <Title>What do you want to submit?</Title>
 
-      <Outlet context={{ isOutletShow, setIsOutletShow, setIsMenuShow }} />
-
+      <CSSTransition
+        in={isMenuShow}
+        timeout={animationTiming}
+        mountOnEnter
+        unmountOnExit
+        classNames='testCss'
+      >
+        <Outlet context={{ isOutletShow, setIsOutletShow, setIsMenuShow }} />
+      </CSSTransition>
       {
-        !isOutletShow && 
-          <CSSTransition
-            in={isMenuShow}
-            timeout={animationTiming}
-            mountOnEnter
-            unmountOnExit
-            classNames="fade-slide"
-          >
-            <ItemContainer>
-              {
-                submitCategory.map((item, index) => {
-                  return (
-                    <Item
-                      key={index}
-                      onClick={()=>{
-                        setIsOutletShow(true);
-                        setIsMenuShow(false)
-                        moveTo(item.link)
-                      }}
-                      >
-                      {item.icon}
-                      <Title>{item.title}</Title>
-                      <TxtBox>{item.explan}</TxtBox>
-                    </Item>
-                  )
-                })
-              }
-            </ItemContainer>
-          </CSSTransition>
+        !isOutletShow &&
+          <ItemContainer>
+            {
+              submitCategory.map((item, index) => {
+                return (
+                  <Item
+                    key={index}
+                    onClick={()=>{
+                      setIsOutletShow(true);
+                      setIsMenuShow(false);
+                      navigate(item.link);
+                    }}
+                  >
+                    {item.icon}
+                    <Title>{item.title}</Title>
+                    <TxtBox>{item.explan}</TxtBox>
+                  </Item>
+                )
+              })
+            }
+          </ItemContainer>
       }
+      
 
       <div>
         Help Appydev collect more tools, communities & podcasts which other can use and share. Plus the indie developers get their products & tools more exposure and ger benefited.

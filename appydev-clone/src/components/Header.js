@@ -65,6 +65,14 @@ const NavItme = styled(NavBorderBox)`
 `
 const DownMenuWrap = styled.div`
   position: relative;
+
+  ${props => props.$direction &&
+    css`
+      ${Arrow} {
+        width: 50px;
+      }
+    `
+  }
 `
 const NavItemWrap = styled.div`
   display: flex;
@@ -172,7 +180,7 @@ function Header() {
             >
               Sponsors
             </NavItme>
-            <DownMenuWrap ref={downMenuRef}>
+            <DownMenuWrap ref={downMenuRef} $direction={isDownMenu}>
               <NavItme onClick={()=>{setIsDownMenu(!isDownMenu)}}>
                   Explore <Arrow width='20px' height='20px'/>
               </NavItme>

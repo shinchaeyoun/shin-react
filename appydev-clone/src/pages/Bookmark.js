@@ -32,6 +32,7 @@ function Bookmark() {
   const [isEmpty, setIsEmpty] = useState(true);
 
   useEffect(()=>{
+    console.log(isBookMark,'isBookMark');
     if(isBookMark > 0) {
       setIsEmpty(false);
     }
