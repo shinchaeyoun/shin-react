@@ -126,9 +126,25 @@ const Main = styled.main`
   margin: 0 auto;
 `
 
-const Frame = styled.div`
-  border: 4px solid #f00;
+const FrameInner = styled.div`
+  padding: 30px;
 `
+const Frame = styled.div`
+  position: fixed;
+
+  width: 100vw; height: 100vh;
+
+  border: 20px solid #fff;
+
+  z-index: 100;
+  clip-path: polygon(0% 0%, 0 100%, 2.3% 100%, 2.3% 3.3%, 97.7% 3.3%, 97.7% 96.7%, 0% 96.7%, 0% 100%, 100% 100%, 100% 0%);
+`
+const InnerFrame = styled.div`
+  border: 2px solid #dd1818;
+  width: 100%; height: 100%;
+`
+
+
 
 const S = {
   Title,
@@ -143,7 +159,9 @@ const S = {
   NewsLetterWrap,
   Bookmark,
   HoverBox,
-  Frame
+  Frame,
+  InnerFrame,
+  FrameInner
 };
 
 export default S;
