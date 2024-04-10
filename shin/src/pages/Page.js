@@ -11,12 +11,9 @@ const MainWrap = styled.div`
   display: flex;
   position: relative;
 `
-
-// const NavList = styled.ul`
-//   border: 1px solid #000;
-//   width: 200px;
-// `
-
+const Section = styled.section`
+  width: calc( 100% - 12rem );
+`
 
 function Page(){
 
@@ -24,9 +21,9 @@ function Page(){
     <MainWrap>
       <Nav />
       
-      <section>
+      <Section>
         <Outlet></Outlet>
-      </section>
+      </Section>
     </MainWrap>
   )
 };

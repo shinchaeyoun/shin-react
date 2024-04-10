@@ -143,8 +143,24 @@ const InnerFrame = styled.div`
   border: 2px solid #dd1818;
   width: 100%; height: 100%;
 `
+const Wrap = styled.div`
 
+`
+const BlockTitle = styled.div`
+  font-family: 'Outfit';
+  font-size: 22px;
+  text-transform: capitalize;
+`
+const Block = styled.div`
+  margin-bottom: 20px;
 
+  > ul {
+    margin-top: 20px;
+    > li {
+      margin-bottom: 3px;
+    }
+  }
+`
 
 const S = {
   Title,
@@ -159,9 +175,13 @@ const S = {
   NewsLetterWrap,
   Bookmark,
   HoverBox,
+  
   Frame,
   InnerFrame,
-  FrameInner
+  FrameInner,
+  Wrap,
+  BlockTitle,
+  Block,
 };
 
 export default S;

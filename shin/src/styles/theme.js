@@ -1,6 +1,6 @@
 const colors = {
   mainColor: '#222',
-  pointColor: '#d0021b',
+  pointColor: '#dd1818',
   bgColor: '#edf2f6',
   gray: '#a9a9a9',
   lightGray: '#d3d3d3',
@@ -18,6 +18,7 @@ const fonts = {
   chomsky: 'Chomsky'
 };
 
+// ${({theme}) => theme.fonts.assistant};
 const theme = {
   colors,
   fonts,
