@@ -4,57 +4,44 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import S from '../styles/GlobalBlock';
 
-const BlockTitle = styled(S.BlockTitle)`
-  margin-bottom: 10px;
+const Title = styled(S.Title)`
+  margin-left: 5px;
 `
-const Block = styled(S.Block)`
-  margin-bottom: 30px;
-`
-const InnerWrap = styled.div`
-  display: grid;
+const GridContainer = styled(S.GridContainer)`
   grid-template-rows: 480px;
   grid-template-columns: 3fr 1fr;
-  gap: 10px 10px;
 `
 const PageImgBlock = styled.div`
-  overflow-y: scroll;
-  border: 2px solid ${({theme}) => theme.colors.pointColor};
   border: 1px solid #222;
+  overflow-y: scroll;
+
   >img {
     width: 100%;
   }
 `
-const TextBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+const TextBlock = styled(S.GridItem)`
+  align-self: end;
 
-  padding-top: 10px; 
+  margin-bottom: 10px;
   font-size: 14px;
 `
-const SubTitle = styled.div`
+const SubTitle = styled(S.SubTitle)`
   margin-top: 20px;
-  color: ${({theme}) => theme.colors.pointColor};
-  font-family: 'NotoSansMedium';
 `
-const Content = styled.div`
-  font-family: 'NotoSansRegular';
-
-  &:nth-last-child(1) {
-    margin-bottom: 10px;
-  }
+const Content = styled(S.Content)`
 `
 
 function Project(){
   return (
     <S.Wrap>
-      <Block>
-        <BlockTitle>Eigenhain</BlockTitle>
+      <S.Block>
+        <Title>Eigenhain</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
+
           <TextBlock>
             <SubTitle>사용언어</SubTitle>
             <Content>HTML, CSS, jQuery</Content>
@@ -66,15 +53,15 @@ function Project(){
             <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
 
             <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <Content>seventeen seventeen seventeen seventeen seventeen seventeen</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
       
-      <Block>
-        <BlockTitle>London</BlockTitle>
+      <S.Block>
+        <Title>London</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
           <img src="/images/project/london_fullpage.png" alt="london page"/>
           </PageImgBlock>
@@ -91,13 +78,13 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
 
-      <Block>
-        <BlockTitle>MMCA</BlockTitle>
+      <S.Block>
+        <Title>MMCA</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/mmca_fullpage.png" alt="mmca page"/>
           </PageImgBlock>
@@ -114,13 +101,13 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
 
-      <Block>
-        <BlockTitle>Seed</BlockTitle>
+      <S.Block>
+        <Title>Seed</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/seed_fullpage.png" alt="seed page"/>
           </PageImgBlock>
@@ -137,13 +124,13 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
 
-      <Block>
-        <BlockTitle>Sony</BlockTitle>
+      <S.Block>
+        <Title>Sony</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/sony_fullpage.png" alt="sony page"/>
           </PageImgBlock>
@@ -160,13 +147,13 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
 
-      <Block>
-        <BlockTitle>Canvas</BlockTitle>
+      <S.Block>
+        <Title>Canvas</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
@@ -183,13 +170,13 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
 
-      <Block>
-        <BlockTitle>Appydev</BlockTitle>
+      <S.Block>
+        <Title>Appydev</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
@@ -206,13 +193,13 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
 
-      <Block>
-        <BlockTitle>Todo List</BlockTitle>
+      <S.Block>
+        <Title>Todo List</Title>
         
-        <InnerWrap>
+        <GridContainer>
           <PageImgBlock>
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
@@ -229,8 +216,8 @@ function Project(){
             <SubTitle>제작후기</SubTitle>
             <Content>content content content content content content</Content>
           </TextBlock>
-        </InnerWrap>
-      </Block>
+        </GridContainer>
+      </S.Block>
     </S.Wrap>
   )
 };

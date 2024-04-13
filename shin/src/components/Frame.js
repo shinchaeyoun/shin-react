@@ -14,3 +14,5 @@ function Frame () {
 };
 
 export default Frame;
+
+// clip-path: polygon(0% 0%, 0 100%, 5% 100%, 5% 5%, 95% 5%, 95% 95%, 5% 95%, 5% 100%, 100% 100%, 100% 0%);

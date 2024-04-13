@@ -10,6 +10,9 @@ import NotoSansRegular from '../fonts/NotoSansKR-Regular.ttf';
 import NotoSansMedium from '../fonts/NotoSansKR-Medium.ttf';
 import NotoSerif from '../fonts/NotoSerifKR-Light.otf';
 import NotoSerifMedium from '../fonts/NotoSerifKR-Medium.otf';
+import NotoSerifRegular from '../fonts/NotoSerifKR-Regular.otf';
+import NotoSerifSemiBold from '../fonts/NotoSerifKR-SemiBold.otf';
+import NotoSerifBold from '../fonts/NotoSerifKR-Bold.otf';
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -74,6 +77,24 @@ const GlobalStyles = createGlobalStyle`
     src: local('NotoSerifMedium'), local('NotoSerifMedium');
     font-style: normal;
     src: url(${NotoSerifMedium}) format('opentype');
+  }
+  @font-face {
+    font-family: 'NotoSerifRegular';
+    src: local('NotoSerifRegular'), local('NotoSerifRegular');
+    font-style: normal;
+    src: url(${NotoSerifRegular}) format('opentype');
+  }
+  @font-face {
+    font-family: 'NotoSerifSemiBold';
+    src: local('NotoSerifSemiBold'), local('NotoSerifSemiBold');
+    font-style: normal;
+    src: url(${NotoSerifSemiBold}) format('opentype');
+  }
+  @font-face {
+    font-family: 'NotoSerifBold';
+    src: local('NotoSerifBold'), local('NotoSerifBold');
+    font-style: normal;
+    src: url(${NotoSerifBold}) format('opentype');
   }
  
 `;
