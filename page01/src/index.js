@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import { ThemeProvider } from 'styled-components';
+import { theme} from './Styles/theme.js';
+import GlobalStyle from './Styles/GlobalStyle.js';
+import GlobalFont from './Styles/GlobalFont.js';
+import Router from './Router';
+import Header from './components/Header.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <GlobalFont />
+    <Header />
+    <Router />
+  </ThemeProvider>
 );
