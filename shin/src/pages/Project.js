@@ -35,7 +35,7 @@ function Project(){
   return (
     <S.Wrap>
       <S.Block>
-        <Title>Eigenhain</Title>
+        <Title>Title</Title>
         
         <GridContainer>
           <PageImgBlock>
@@ -43,17 +43,17 @@ function Project(){
           </PageImgBlock>
 
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>seventeen seventeen seventeen seventeen seventeen seventeen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -66,17 +66,17 @@ function Project(){
           <img src="/images/project/london_fullpage.png" alt="london page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -89,17 +89,17 @@ function Project(){
             <img src="/images/project/mmca_fullpage.png" alt="mmca page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -112,17 +112,17 @@ function Project(){
             <img src="/images/project/seed_fullpage.png" alt="seed page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -135,17 +135,17 @@ function Project(){
             <img src="/images/project/sony_fullpage.png" alt="sony page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -158,17 +158,17 @@ function Project(){
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -181,17 +181,17 @@ function Project(){
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>
@@ -204,17 +204,17 @@ function Project(){
             <img src="/images/project/eigenhain_fullpage.png" alt="eigenhain page"/>
           </PageImgBlock>
           <TextBlock>
-            <SubTitle>사용언어</SubTitle>
-            <Content>HTML, CSS, jQuery</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
             
-            <SubTitle>사용기능</SubTitle>
-            <Content>drop drag canvas strong</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>기획의도</SubTitle>
-            <Content>rlghlrdmleh rlghlrdmleh seventeen seventeen seventeen seventeen seventeen seveteen</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
 
-            <SubTitle>제작후기</SubTitle>
-            <Content>content content content content content content</Content>
+            <SubTitle>SubTitle</SubTitle>
+            <Content>Content</Content>
           </TextBlock>
         </GridContainer>
       </S.Block>

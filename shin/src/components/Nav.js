@@ -101,30 +101,30 @@ function Nav(){
         navigate('/');
         setIsActive(0);
       }}>
-        <p className={isActive == 0 ? 'active' : null }>Shin</p>
+        <p className={isActive == 0 ? 'active' : null }>Nav</p>
       </Logo>
 
       <NavList>
         <NavItem onClick={()=>{navigate('/introduce'); setIsActive(1);}}>
-          <p className={isActive == 1 ? 'active' : null }>Introduce</p>
+          <p className={isActive == 1 ? 'active' : null }>NavItem</p>
         </NavItem>
         <NavItem ref={downMenuRef} onClick={()=>{
           navigate('/project');
           setIsActive(2);
           setIsDownMenu(true);
         }}>
-          <p className={isActive == 2 ? 'active' : null }>Project</p>
+          <p className={isActive == 2 ? 'active' : null }>NavItem</p>
           {
             isDownMenu ?
             <DownMenu>
-              <li>Eigenhain</li>
-              <li>London</li>
-              <li>MMCA</li>
-              <li>Seed</li>
-              <li>Sony</li>
-              <li>Canvas</li>
-              <li>Appydev</li>
-              <li>Todo List</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
+              <li>DownMenu</li>
             </DownMenu>
             :
             null
@@ -132,10 +132,10 @@ function Nav(){
           
         </NavItem>
         <NavItem onClick={()=>{navigate('/career'); setIsActive(3);}}>
-          <p className={isActive == 3 ? 'active' : null }>Career</p>
+          <p className={isActive == 3 ? 'active' : null }>NavItem</p>
         </NavItem>
         <NavItem onClick={()=>{navigate('/contact'); setIsActive(4);}}>
-          <p className={isActive == 4 ? 'active' : null }>Contact</p>
+          <p className={isActive == 4 ? 'active' : null }>NavItem</p>
         </NavItem>
       </NavList>
     </NavWrap>
