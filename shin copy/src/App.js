@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled, { css } from 'styled-components';
 import S from './styles/GlobalBlock';
 
@@ -95,11 +95,15 @@ function App() {
         return (
             <NavItem key={index}
                 onClick={() => {
-                    scrollRef.current[index].scrollIntoView({ behavior: "smooth", block: 'start' });
+                    // scrollRef.current[index].scrollIntoView({behavior: "smooth"});
+                    window.scrollTo({
+                        top: scrollRef.current[index].offsetTop - 35,
+                        behavior: "smooth"
+                    });
                 }}
             >
                 <p>{item}</p>
-            </NavItem>
+            </NavItem >
         );
     });
     const sectionItem = sections.map((item, index) => {
@@ -123,7 +127,7 @@ function App() {
                 </NavList>
             </NavWrap>
 
-            <Main>
+            <Main id="main">
                 {sectionItem}
             </Main>
         </Wrap>
