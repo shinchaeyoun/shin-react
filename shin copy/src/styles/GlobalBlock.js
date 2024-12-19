@@ -28,8 +28,14 @@ const GridContainer = styled.div`
   grid-template-columns: ${props => props.gridColumns || '1fr 1fr'};
   gap: ${props => props.gap || '10px'};
 `
+const GridContent = styled.div`
+display: grid;
+  grid-template-rows: ${props => props.gridRows || 'minmax(auto, auto)'};
+  grid-template-columns: ${props => props.gridColumns || '1fr 1fr'};
+  gap: ${props => props.gap || '10px'};
+`
 const GridItem = styled.div`
-  // color: ${({theme}) => theme.colors.subGray};
+  // color: ${({ theme }) => theme.colors.subGray};
 
   background-image: url(${props => props.bg});
   background-size: cover;
@@ -47,6 +53,13 @@ const Block = styled.div`
     margin-bottom: 0px;
   }
 `
+const ImgBlock = styled.div`
+  
+  border: 1px solid #222;
+  > img {
+    width: 100%;
+  }
+`
 const Title = styled.div`
   margin-bottom: 10px;
   font-family: 'Outfit';
@@ -54,11 +67,21 @@ const Title = styled.div`
   text-transform: capitalize;
 `
 const SubTitle = styled.div`
-  color: ${({theme}) => theme.colors.pointColor};
+  color: ${({ theme }) => theme.colors.pointColor};
   font-family: 'NotoSansMedium';
 `
 const Content = styled.div`
   font-family: 'NotoSansRegular';
+`
+
+const Section = styled.div`
+  min-height: 100vh;
+  background-color: #eee;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 `
 
 const S = {
@@ -67,11 +90,14 @@ const S = {
   FrameInner,
   Wrap,
   GridContainer,
+  GridContent,
   GridItem,
   Block,
+  ImgBlock,
   Title,
   SubTitle,
   Content,
+  Section,
 };
 
 export default S;

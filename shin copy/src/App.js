@@ -9,13 +9,14 @@ import Section3 from './components/Section3.js'
 import Section4 from './components/Section4.js'
 
 const Wrap = styled(S.FrameInner)`
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 `
 const Main = styled.main`
-    width: calc( 100%);
+  width: calc( 100%);
 `
 const NavWrap = styled.div`
+  flex-shrink: 0;
   position: sticky;
   top: 30px;
   width: 12rem;
@@ -82,56 +83,55 @@ const DownMenu = styled.ul`
   }
 `
 function App() {
-    const navs = ['nav', 'nav', 'nav', 'nav'];
-    const sections = [<Section1 />, <Section2 />, <Section3 />, <Section4 />];
+  const navs = ['nav', 'nav', 'nav', 'nav'];
+  const sections = [<Section1 />, <Section2 />, <Section3 />, <Section4 />];
 
-    const [isActive, setIsActive] = useState(0);
-    const [isDownMenu, setIsDownMenu] = useState(false);
-    const downMenuRef = useRef();
+  const [isActive, setIsActive] = useState(0);
+  const [isDownMenu, setIsDownMenu] = useState(false);
+  const downMenuRef = useRef();
 
-    const scrollRef = useRef([]);
+  const scrollRef = useRef([]);
 
-    const navItem = navs.map((item, index) => {
-        return (
-            <NavItem key={index}
-                onClick={() => {
-                    // scrollRef.current[index].scrollIntoView({behavior: "smooth"});
-                    window.scrollTo({
-                        top: scrollRef.current[index].offsetTop - 35,
-                        behavior: "smooth"
-                    });
-                }}
-            >
-                <p>{item}</p>
-            </NavItem >
-        );
-    });
-    const sectionItem = sections.map((item, index) => {
-        return (
-            <NavItem key={index} ref={(el) => (scrollRef.current[index] = el)}>
-                {sections[index]}
-            </NavItem>
-        )
-    });
-
-
+  const navItem = navs.map((item, index) => {
     return (
-        <Wrap>
-            <NavWrap>
-                <Logo>
-                    <p className={isActive == 0 ? 'active' : null}>Nav</p>
-                </Logo>
-
-                <NavList>
-                    {navItem}
-                </NavList>
-            </NavWrap>
-
-            <Main id="main">
-                {sectionItem}
-            </Main>
-        </Wrap>
+      <NavItem key={index}
+        onClick={() => {
+          // scrollRef.current[index].scrollIntoView({behavior: "smooth"});
+          window.scrollTo({
+            top: scrollRef.current[index].offsetTop - 35,
+            behavior: "smooth"
+          });
+        }}
+      >
+        <p>{item}</p>
+      </NavItem >
+    );
+  });
+  const sectionItem = sections.map((item, index) => {
+    return (
+      <NavItem key={index} ref={(el) => (scrollRef.current[index] = el)}>
+        {sections[index]}
+      </NavItem>
     )
+  });
+
+  return (
+    <Wrap>
+      <NavWrap>
+        <Logo>
+          <p className={isActive == 0 ? 'active' : null}>Nav</p>
+        </Logo>
+
+        <NavList>
+          {navItem}
+        </NavList>
+      </NavWrap>
+
+      <Main id="main">
+        {sectionItem}
+      </Main>
+    </Wrap>
+  )
 };
 
 export default App;

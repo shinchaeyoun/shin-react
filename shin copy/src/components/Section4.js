@@ -1,18 +1,16 @@
+/* eslint-disable */
 import React from "react";
 import styled, { css } from 'styled-components';
 import S from '../styles/GlobalBlock';
-
-
-const Section = styled.div`
-    min-height: 100vh;
-    background-color: #eee;
-    margin-bottom: 20px;
-`
+import useInput from './useInput.js';
 
 export default function Section4 (){
+    const userValue = useInput();
     return (
-        <Section>
+        <S.Section>
             Section4
-        </Section>
+
+            <input type="text" id="userValue" {...userValue} />
+        </S.Section>
     )
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import styled, {css} from 'styled-components';
 import S from '../styles/GlobalBlock';
