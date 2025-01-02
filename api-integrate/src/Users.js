@@ -138,7 +138,7 @@ function Users() {
         <>
             <ul>
                 {users.map(user => (
-                    <li key={user.id}>
+                    <li key={user.id}>                                                                                                                                                                                                              
                         {user.username} ({user.name})
                     </li>
                 ))}
@@ -146,7 +146,7 @@ function Users() {
 
             <button onClick={fetchUsers}>retry</button>
         </>
-    )
+    ) 
 }
 
 export default Users;
