@@ -10,9 +10,14 @@ const darkTheme = {
     accentColor: '#ffe246',
 };
 
+const colors = {
+    pointColor: "#fd1052"
+}
+
 const theme = {
     lightTheme,
     darkTheme,
+    colors,
 };
 
 export { theme,lightTheme,darkTheme };

@@ -1,5 +1,7 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Contact from '../components/Contact.js';
 
 const MainContent = styled.div`
   width: 50%;
@@ -18,7 +20,7 @@ const GroupBox = styled.div`
   height: 100vh;
 `
 function Main() {
-  return(
+  return (
     <>
       <MainSection>
         <MainContent>1</MainContent>
@@ -26,19 +28,24 @@ function Main() {
       </MainSection>
 
       <GroupBox>
-        Making
+        GroupBox<br/>
+        1
       </GroupBox>
 
       <GroupBox>
-        Event
+        GroupBox<br/>
+        2
       </GroupBox>
 
       <GroupBox>
-        Store
+        GroupBox<br/>
+        3
       </GroupBox>
 
       <GroupBox>
-        Contact
+        GroupBox<br/>
+        4
+        <Contact />
       </GroupBox>
     </>
   )

@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const OuterLink = styled.span`
@@ -26,22 +27,43 @@ const Logo = styled.div`
   font-size: 28px;
   color: ${props => props.theme.colors.pointColor}
 `
-function Header() {
-  return(
+function Header({ onClickSideNav,isNav,setSideNav }) {
+  const mainContent = ['Inner link1', 'Inner link2', 'Inner link3', 'Inner link4'];
+
+  const onClick = (id) => {
+    console.log('on click', isNav);
+    setSideNav(id);
+    console.log('on click', isNav);
+  }
+
+  return (
     <>
       <SideNav $left='20px'>
         <ul>
-          <li>Inner link</li>
-          <li>Inner link</li>
-          <li>Inner link</li>
-          <li>Inner link</li>
-          <li>Inner link</li>
+          {
+            mainContent.map((item, index) => {
+              let idx = index + 1;
+              
+              return (
+                <li
+                  key={index}
+                  onClick={()=>onClick(idx)}
+                >
+                  {item} &nbsp; {idx}
+                </li>
+              )
+            })
+          }
+          {/* <li>Inner link1</li>
+          <li>Inner link2</li>
+          <li>Inner link3</li>
+          <li>Inner link4</li> */}
           <li><OuterLink>OuterLink</OuterLink></li>
           <li><OuterLink>OuterLink</OuterLink></li>
         </ul>
       </SideNav>
 
-      <Logo>----</Logo>
+      <Logo>-</Logo>
 
       <SideNav $right='20px' $ta='right'>
         <ul>
